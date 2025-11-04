@@ -1,0 +1,21 @@
+body
+{
+    background-color: lightcoral;
+}
+h1
+{
+    background-color: green;
+}
+#para1
+{
+    background-color: aqua;
+}
+.A
+{
+    background-color: blue;
+}
+
+#head1
+{
+    background: linear-gradient( 90deg, red , green,blue , pink);
+}

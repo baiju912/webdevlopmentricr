@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Momo+Signature&family=Noto+Sans+JP:wght@100..900&family=Oswald:wght@200..700&display=swap');
+
+
+#head2
+{
+    background-color: blueviolet;
+}
+
+#head1
+{
+    background: linear-gradient(90deg , red 10%, yellow 30%,green 80%,blue 90%);
+}
+
+#para2
+{
+    font-family: "Momo Signature", cursive;
+
+    font-size: x-large;
+    font-weight: bold;
+}
+
+#para1
+{
+    font-family: "Oswald", sans-serif;
+}
+h3{
+    color: red;
+    font-size: 60px;
+    text-shadow: 3px 3px 2px black;
+}
+
+#d1{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    border: 5px double black;
+    box-shadow: 3px 3px 3px 3px black;
+}
