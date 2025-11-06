@@ -7,7 +7,7 @@ body
     border: 1px solid blue;
     height: 350px;
     width: 300px;
-    margin: 10px auto;
+    margin: 30px auto;
     padding: 10px;
     background-color: white;
     border-radius: 10px;
@@ -50,6 +50,10 @@ body
 #par2
 {
     text-align: center;
+}
+#check1
+{
+    margin-top: 10px;
 }
 #forg1
 {
