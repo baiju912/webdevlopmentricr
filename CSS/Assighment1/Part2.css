@@ -1,0 +1,72 @@
+body 
+{
+    background-color: blue;
+}
+#box1
+{
+    width: fit-content;
+    margin: 10px auto;
+    padding: 10px 30px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+.input{
+    width: fit-content;
+}
+.input input{
+    margin: 0 auto;
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 4px;
+    margin: 5px;
+    font-size: medium;
+    width: 240px;
+}
+#head1
+{
+    text-align: start;
+    text-decoration-line:underline, color #2404f4;
+    font-weight: bolder;
+    font-size: 40px;
+}
+#logbutt1
+{
+    border: 1px solid blue;
+    border-radius: 10px;
+    font-weight: bolder;
+    color: white;
+     height: 35px;
+    width: 280px;
+    margin: 5px auto;
+    padding: 10px;
+    background-color: blue;
+}
+#input
+{
+    border: none;
+    border-bottom: 1px;
+}
+#par2
+{
+    text-align: center;
+}
+#forg1
+{
+    margin-left: 50px;
+    color: blue;
+    
+}
+#button1
+{
+    margin-top: 30px;
+}
+#sign
+{
+    color: blue;
+}
+
+#check1{
+    margin: 8px 0;
+
+}
