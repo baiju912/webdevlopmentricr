@@ -1,0 +1,67 @@
+.Login{
+  background-color:  #0b5396;
+  box-shadow:b;
+}
+
+.Login:hover {
+  animation: bounceDown 0.3s ease-in;
+  
+}
+@keyframes bounceDown {
+  0% {
+    transform: translatey(0);
+  }
+  40% {
+    transform: translatey(4px); 
+  }
+  70% {
+    transform: translatey(2px); 
+  }
+  100% {
+    transform: translatey(0);
+  }
+}
+
+.Enquiry{
+  background-color: lightcyan;
+}
+
+.name{
+    width: 25rem;
+    padding: 10px;
+    
+}
+.email{
+    width: 35rem;
+    padding: 10px;
+}
+
+.qualification{
+    width: 15rem;
+    padding: 10px;
+}
+.edu{
+      width: 65rem;
+    padding: 10px;
+}
+.year{
+    width: 25rem;
+    padding: 10px;
+}
+.branch{
+    width: 25rem;
+    padding: 10px;
+}
+.info{
+    width: 30rem;
+    padding: 10px;
+}
+.NameFriend{
+     width: 30rem;
+    padding: 10px;
+
+}
+.footer{
+    background-color: #0b5396;
+    margin-top: 7rem;
+}

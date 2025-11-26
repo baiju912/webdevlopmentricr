@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task2</title>
+  </head>
+  <body>
+    <table border="1" cellspacing="0">
+      <tr>
+        <td>
+          <h2>&nbsp; Pizza Order Form</h2>
+          <div>
+            <div>
+              <label for="Firstname"> &nbsp; First Name: </label>
+              <input type="text" name="Firstname" id="Firstname" />
+            </div>
+            <br />
+            <div>
+              <label for="lastname">&nbsp; Last Name: </label>
+              <input type="text" name="lastname" id="lastname" />
+            </div>
+            <br />
+            <div>
+              <label for="email"> &nbsp; Email Adress: </label>
+              <input type="email" name="email" id="email" />
+            </div>
+            <br />
+            <div>
+              <label for="nubmer"> &nbsp; Contact Number: </label>
+              <input type="number" name="nubmer" id="nubmer" />
+            </div>
+            <br />
+            <div>
+              <label for="date"> &nbsp; Presferred Delivery Date: </label>
+              <input type="date" name="date" id="date" />
+            </div>
+            <br />
+            <div>
+              <label for="size"> &nbsp; Size: <br /></label>
+              <input type="radio" name="size" id="Small" value="Small" />
+              <span>Small</span>
+              <input type="radio" name="size" id="medium" value="Medium" />
+              <span>Medium</span>
+              <input type="radio" name="size" id="Large" value="Large" />
+              <span>Large</span>
+            </div>
+            <br />
+            <div>
+              <label for="flavor"> &nbsp; Flavor: <br /> </label>
+              <input
+                type="checkbox"
+                name="flavor"
+                id="flavor1"
+                value="Hawaiian (Php 150.00)"
+              />
+              <span>Hawaiian (Php 150.00)</span>
+              <select name="flavor" id="Hawaiian">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              <br />
+              <input
+                type="checkbox"
+                name="flavor"
+                id="flavor2"
+                value="Pepperoni (Php 140.00)"
+              />
+              <span>Pepperoni (Php 140.00)</span>
+              <select name="flavor" id="flavor2">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+
+              <br />
+              <input
+                type="checkbox"
+                name="flavor"
+                id="flavor2"
+                value="Vegetable (Php 130.00)"
+              />
+              <span>Vegetable (Php 130.00)</span>
+              <select name="flavor" id="flavor2">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <br />
+            <div>
+              <label for="creditcard number">
+                &nbsp; Credit Card Number:
+              </label>
+              <input
+                type="number"
+                name="creditcard nubmer"
+                id="creditcard name"
+              />
+            </div>
+            <br />
+            <div>
+              <label for="pin"> &nbsp; PIN: </label>
+              <input type="number" name="pin" id="pin" />
+            </div>
+            <br />
+            <div>
+              <label for="addtional note">
+                &nbsp; Additional Note: <br />
+              </label>
+              &nbsp;
+              <textarea name="addtional note" id="addtional note"></textarea>
+            </div>
+
+            <br />
+            &nbsp; <button id="Submitbtn" onclick="submit()">Submit Order</button> <br />
+            &nbsp;
+          </div>
+        </td>
+      </tr>
+    </table>
+    <script src="pizza.js"></script>
+  </body>
+</html>
