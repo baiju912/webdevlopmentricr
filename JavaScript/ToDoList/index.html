@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="bg-primary text-center px-2 fw-bold fs-1 text-light py-1 ">To Do List</div>
+    </header>
+
+    <main>
+        <div class=" container d-flex gap-4 mt-4">
+            <input  type="text" name="Newtask" id="Newtask" placeholder="Add Your New Task" class="form-control"/>
+            <button class="btn btn-primary w-25 " onclick="AddTask()"> <i class="bi bi-plus-circle"></i> Add Task</button>
+        </div>
+
+
+        <div class="container p-5 fs-4 ">
+            <ol id="TaskList" >
+                <!-- <li class="p-2 d-flex align-items-center border-bottom ">
+                    <div class="  w-75 ">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur officiis deserunt quia, iusto asperiores voluptate recusandae est doloremque nobis voluptates veniam officia nemo architecto iste minima. Porro voluptatibus atque sint?
+                At iure cum fugiat consequuntur quae incidunt doloribus sunt eum quas quos ullam suscipit ex ab deleniti adipisci enim repudiandae maiores nihil veniam, tempora illum et ut. Vitae, cupiditate deserunt.
+                Placeat atque libero facilis molestias commodi, asperiores provident blanditiis doloremque, neque doloribus pariatur rem id nisi assumenda sed iste, autem ea ratione optio error? Similique blanditiis facilis eligendi debitis culpa.
+                Deserunt provident enim numquam blanditiis. Vitae ex neque quo a autem rem fuga nam libero hic! Ullam eveniet, consequuntur rerum fuga quos alias ipsum facilis voluptas voluptatum. Nam, ipsa eaque?
+                Fuga consectetur aut expedita natus facere cum eligendi maxime, cupiditate, eveniet fugit voluptatibus recusandae voluptas distinctio, voluptatum sapiente. Ipsam delectus, neque aspernatur vitae exercitationem accusantium repudiandae a quis ipsum. Maiores.
+                    </div><button class="btn btn-danger ms-3"> <i class="bi bi-trash"></i> Delete </button> </li> -->
+                
+            </ol>
+        </div>
+    </main>
+   
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <script src="./script.js"></script>
+</body>
+</html>
