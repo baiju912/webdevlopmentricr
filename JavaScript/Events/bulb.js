@@ -48,3 +48,5 @@ function SB_control2()
     document.getElementById("SmartBulb").classList.toggle("on");
 }
 
+
+
