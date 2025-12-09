@@ -56,58 +56,38 @@
       </div>
     </header>
 
-    <div style="margin-top: 120px; margin-bottom: 50px">
-      <h3 class="text-center">Our Courses</h3>
-      <div class="mt-5 ms-5 d-flex gap-5">
-        <div
-          class="bg-light border border-black rounded-4 shadow text-center card"
-        >
-          <img src="./imagel1.png" alt="" />
-          <h3>Java</h3>
-          <p>level- Easy</p>
-          <p>Price-5000</p>
-          <a href="./index3.html"
-            ><button class="btn btn-primary mb-4 w-75">Enroll</button></a
+    <main style="margin-top: 80px; margin-bottom: 50px">
+      <div
+        class="mx-auto d-grid gap-3 border rounded-3 w-50 py-3 px-4 d-flex bg-light flex-column align-items-center shadow"
+      >
+        <h2 class="text-center">Contact Us</h2>
+        <div class="d-flex justify-content-between w-75 gap-5">
+          <label for="name" class="w-25 fw-bold"
+            >Name:<sup class="text-danger">*</sup></label
           >
+          <input class="flex-grow-1" type="text" id="name" name="name" />
         </div>
 
-        <div
-          class="bg-light border border-black rounded-4 shadow text-center card"
-        >
-          <img src="./imagel2.png" alt="" />
-          <h3>Python</h3>
-          <p>level-Easy</p>
-          <p>Price-4000</p>
-          <a href="./index3.html"
-            ><button class="btn btn-primary mb-4 w-75">Enroll</button></a
+        <div class="d-flex justify-content-between w-75 gap-5">
+          <label class="w-25 fw-bold" for="email"
+            >Email:<sup class="text-danger">*</sup></label
           >
+          <input class="flex-grow-1" type="email" id="email" name="email" />
         </div>
 
-        <div
-          class="bg-light border border-black rounded-4 shadow text-center card"
-        >
-          <img src="./imagel3.png" alt="" />
-          <h3>DSA</h3>
-          <p>level-Hard</p>
-          <p>Price-6000</p>
-          <a href="./index3.html"
-            ><button class="btn btn-primary mb-4 w-75">Enroll</button></a
-          >
+        <div class="d-flex justify-content-between w-75 gap-5">
+          <label class="w-25 fw-bold" for="Message">Message</label>
+          <textarea class="flex-grow-1" name="Message" id="Message"></textarea>
         </div>
 
-        <div
-          class="bg-light border border-black rounded-4 shadow text-center card"
+        <button
+          class="btn btn-outline-primary px-5 py-1 mt-2"
+          onclick="contact()"
         >
-          <img src="./imagel4.png" alt="" />
-          <h3>FSD</h3>
-          <p>level-Easy</p>
-          <p>Price-8000</p>
-          <a href="./index3.html"
-            ><button class="btn btn-primary mb-4 w-75">Enroll</button></a
-          >
-        </div>
+          Submit
+        </button>
       </div>
-    </div>
+    </main>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
