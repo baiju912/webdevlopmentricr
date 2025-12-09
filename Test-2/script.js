@@ -1,8 +1,4 @@
-let audio = new Audio("./button1.mp3");
-let success = new Audio("./sucess.mp3");
-let btn1 = new Audio("./button1.mp3");
-let clearSound = new Audio("./clear.mp3");
-let vol = true;
+
 const states = [
   { state: "Andhra Pradesh", capital: "Amaravati", top: "68%", left: "37%" },
   { state: "Arunachal Pradesh", capital: "Itanagar", top: "26%", left: "85%" },
@@ -15,12 +11,7 @@ const states = [
   { state: "Gujarat", capital: "Gandhinagar", top: "42%", left: "15%" },
   { state: "Haryana", capital: "Chandigarh", top: "24%", left: "30%" },
   { state: "Himachal Pradesh", capital: "Shimla", top: "16%", left: "34%" },
-  {
-    state: "Jammu & Kashmir",
-    capital: "Srinagar/Jammu",
-    top: "10%",
-    left: "27%",
-  },
+  { state: "Jammu & Kashmir",capital: "Srinagar/Jammu",top: "10%",left: "27%",},
   { state: "Jharkhand", capital: "Ranchi", top: "41%", left: "57%" },
   { state: "Karnataka", capital: "Bengaluru", top: "68%", left: "26%" },
   { state: "Kerala", capital: "Thiruvananthapuram", top: "83%", left: "28%" },
@@ -213,6 +204,11 @@ function search() {
     div.style.left = "65%";
     img.appendChild(div);
   }
+  let audio = new Audio("./button1.mp3");
+let success = new Audio("./sucess.mp3");
+let btn1 = new Audio("./button1.mp3");
+let clearSound = new Audio("./clear.mp3");
+let vol = true;
   if (vol) audio.play();
   const temp = document.createElement("p");
   temp.innerText = text;
@@ -330,7 +326,5 @@ function add() {
       div.removeChild(temp);
       div.removeChild(temp2);
     });
-    
   });
 }
-
