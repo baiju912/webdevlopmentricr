@@ -14,23 +14,44 @@ function submit()
     // if(data is invalid)
     //     alert()
 
-    if(!/^[A-Za-z]+$/.test(nm))
+    document.querySelectorAll(".Error").forEach((Element) => {Element.innerHTML ="";});
+
+    if(!nm)
     {
-        alert("Wrong Name");
+      document.getElementById("NameError").innerText = "Requried";
+      return;
+    }
+    else if(!/^[A-Za-z]+$/.test(nm))
+    {
+        document.getElementById("NameError").innerText = "Only Alphabets and Spaces are Allowed";
         return;
     }
 
-    if(!/^[6-9]\d{9}$/.test(nm))
+    if(!no)
     {
-        alert("Wrong Phone No");
+      document.getElementById("PhoneError").innerText = "Requried";
+      return;
+    }
+    else if(!/^[6-9]\d{9}$/.test(nm))
+    {
+        document.getElementById("PhoneError").innerText = "Only Indian Mobile Nummber allowed";
         return;
     }
 
-     if(!/^[\w\.]+@(gmail|outlook|ricr|yahoo)\.(com|in|co.in)$/.test(em))
+    if(!em)
     {
-        alert("Wrong Email");
+      document.getElementById("EmailError").innerText = "Requried";
+      return;
+    }
+    else if(!/^[\w\.]+@(gmail|outlook|ricr|yahoo)\.(com|in|co.in)$/.test(em))
+    {
+        document.getElementById("EmailError").innerText = "Use Proper Email Format";
         return;
     }
+
+   
+
+     
 
     const currentyear = new Date().getFullYear();
     // console.log(currentdate);
@@ -38,11 +59,20 @@ function submit()
     const birthyear = dob.split("-")[0];
     console.log (currentyear, birthyear);
 
-    if(currentyear-birthyear<17)
+
+     if(!dob)
     {
-        alert("Not Eligible by age");
+      document.getElementById("DOBError").innerText = "Requried";
+      return;
+    }
+
+    else if(currentyear-birthyear<17)
+    {
+       document.getElementById("DOBError").innerText = "You must be 18 years Old";
         return;
     }
+
+    
 
         
     

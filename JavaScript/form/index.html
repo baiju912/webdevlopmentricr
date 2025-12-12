@@ -31,25 +31,32 @@
         class="mx-auto d-grid gap-3 border rounded-3 w-50 py-3 px-4 d-flex bg-light flex-column align-items-center shadow"
       >
         <h2 class="text-center">Form Details</h2>
-        <div class="d-flex justify-content-between w-75 gap-5">
+        
+          <div class="d-flex justify-content-between w-75 gap-5">
           <label for="name" class="w-25 fw-bold">Full Name:</label>
           <input class="flex-grow-1" type="text" id="name" name="name" />
+          
         </div>
+        <span class="text-danger fs-6 float-end  Error" id="NameError"></span>
+        
 
         <div class="d-flex justify-content-between w-75 gap-5">
           <label class="w-25 fw-bold" for="Phone">Phone No:</label>
           <input class="flex-grow-1" type="number" id="Phone" name="Phone" />
         </div>
+        <span class="text-danger fs-6 float-end Error" id="PhoneError"></span>
 
         <div class="d-flex justify-content-between w-75 gap-5">
           <label class="w-25 fw-bold" for="email">Email:</label>
           <input class="flex-grow-1" type="email" id="email" name="email" />
         </div>
+        <span class="text-danger fs-6 float-end Error" id="EmailError"></span>
 
         <div class="d-flex justify-content-between w-75 gap-5">
           <label class="w-25 fw-bold" for="Message">D.O.B</label>
           <input type="date" class="flex-grow-1" name="dob" id="dob" />
         </div>
+        <span class="text-danger fs-6 float-end Error" id="DOBError"></span>
 
         <button
           class="btn btn-outline-primary px-5 py-1 mt-2"
