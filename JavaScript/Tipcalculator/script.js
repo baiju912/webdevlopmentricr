@@ -25,5 +25,5 @@ function calculate() {
 
   bill = bill / person;
 
-  display.innerText = `Tip Amount ₹${bill} /person`;
+  display.innerText = `Tip Amount ₹${bill} /each`;
 }

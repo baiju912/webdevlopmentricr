@@ -13,19 +13,22 @@ function submit() {
     return;
   }
   if (number < val) {
-    display.innerText = "OOPS! SORRY!!! TRY A SMALLER NUMBER.";
+    
+    alert("OOPS! SORRY!!! TRY A SMALLER NUMBER.")
   } else if (number > val) {
-    display.innerText = "OOPS! SORRY!!! TRY A LARGER NUMBER.";
+   
+    alert("OOPS! SORRY!!! TRY A LARGER NUMBER.")
   } else {
-    display.innerText = "Eureka!!! You nailed it.";
+    
+    alert("Eureka!!! You nailed it.")
   }
-  score = score + 1;
-  attempt.innerText = score;
+  // score = score + 1;
+  // attempt.innerText = score;
 }
-function restart() {
-  start();
-  document.getElementById("number").value = "";
-  display.innerText = "";
-  score = 0;
-  attempt.innerText = score;
-}
+// function restart() {
+//   start();
+//   document.getElementById("number").value = "";
+//   display.innerText = "";
+//   score = 0;
+//   attempt.innerText = score;
+// }

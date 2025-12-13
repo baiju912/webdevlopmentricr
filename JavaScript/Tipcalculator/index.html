@@ -17,12 +17,12 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="w-full p-3 text-center bg-primary text-white">
-      <h1 class="fw-bolder">Tip Calculator</h1>
+    <header class="w-full p-1 text-center bg-primary text-white">
+      <h1 >Tip Calculator</h1>
     </header>
 
-    <main>
-      <div class="continer d-flex flex-column gap-3  box border rounded-4 p-5">
+    <main class="bg-primary-subtle">
+      <div class="continer d-flex flex-column gap-3 bg-info-subtle text-dark box border rounded-4 p-5">
         <div class="d-flex flex-column align-items-start gap-1">
           <label for="amount" class="fw-bold fs-5">Bill Amount:</label>
           <div class="inputDiv">
@@ -34,11 +34,11 @@
           <label for="service" class="fw-bold fs-5">How was the Service?</label>
           <select name="service" id="service">
             <option value="">---Select---</option>
-            <option value="25">Top Notch</option>
-            <option value="20">Excellent</option>
-            <option value="15">Good</option>
-            <option value="10">Bad</option>
-            <option value="5">Worst</option>
+            <option value="25">25% - Top Notch</option>
+            <option value="20">20% - Excellent</option>
+            <option value="15">15% - Good</option>
+            <option value="10">10% - Bad</option>
+            <option value="5">5% - Worst</option>
           </select>
         </div>
         <div class="d-flex flex-column align-items-start gap-1">
