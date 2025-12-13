@@ -22,13 +22,6 @@ function submit() {
     
     alert("Eureka!!! You nailed it.")
   }
-  // score = score + 1;
-  // attempt.innerText = score;
+ 
 }
-// function restart() {
-//   start();
-//   document.getElementById("number").value = "";
-//   display.innerText = "";
-//   score = 0;
-//   attempt.innerText = score;
-// }
+
