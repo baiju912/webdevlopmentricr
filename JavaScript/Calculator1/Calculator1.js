@@ -24,7 +24,7 @@ function Input(char)
 }
 
 
-document.addEventListener("keypress", (abc)=>{console.log("Pressed Key","abc.code");
+document.addEventListener("keydown", (abc)=>{console.log("Pressed Key",abc.key);
 
     if(abc.key === "Enter")
     {
@@ -51,6 +51,6 @@ document.addEventListener("keypress", (abc)=>{console.log("Pressed Key","abc.cod
 
     else if(abc.key === "Backspace")
     {
-        Input("c");
+        Input("C");
     }
 })

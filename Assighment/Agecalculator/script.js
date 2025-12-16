@@ -1,19 +1,26 @@
+function calculate()
+{
+    const Dob = document.getElementById("dob").value;
+    const cd = document.getElementById("date").value;
 
+    // console.log(Dob);
+    // console.log(cd);
 
+    if(!Dob || !cd)
+    {
+        alert("Please Enter your Data");
+        return
+    }
+    else
+    {
+        const res = document.getElementById("result");
+        
+        const age = cd.split("-")[0] - Dob.split("-")[0];
 
-function calculate() {
-  const dob = document.getElementById("dob").value;
-  const today = document.getElementById("today").value;
-  if(!dob || !today){
-    alert("Enter the Data")
-    return
-  }
-  const age = document.getElementById("age");
-  const date1 = dob.split("-");
-  const date2 = today.split("-");
-  const year = date2[0] - date1[0];
-  const month = date2[1] - date1[1];
-  const day = date2[2] - date1[2];
+        res.innerText =  `Your age is ${age} Years.`;
 
-  age.innerText = `Your age is:\n${year} years ${month} months ${day}days`;
+    }
+
+    
+
 }
