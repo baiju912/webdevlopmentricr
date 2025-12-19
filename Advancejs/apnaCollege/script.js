@@ -92,9 +92,76 @@ console.log( "a/b ="+ a/b);
 // console.log("Congratulation, You entered the right number");
 
 
-let fullname = prompt("Enter your full name withot space");
+// let fullname = prompt("Enter your full name withot space");
 
-let username = "@"+fullname + fullname.length;
+// let username = "@"+fullname + fullname.length;
 
-console.log(username);
+// console.log(username);
+
+// let marks = [85, 97, 44, 37, 76, 60];
+
+// let sum = 0;
+
+// for(let val of marks)
+// {
+//     sum += val;
+// }
+
+// let avg = sum/marks.length;
+
+// console.log(`Avg marks of Class = ${avg}`);
+
+// let items = [250, 645, 300, 900, 50];
+
+// let i = 0;
+
+// for(let val of items)
+// {
+//     // console.log(`Value at index ${i} = ${val}`);
+
+//     let offer = val/10;
+
+//     items[i] = items[i]-offer;
+
+//     // console.log(`Value after Offer = ${items[i]}`);
+//     i++;
+// }
+
+// console.log(items);
    
+
+// let comp = ["Bloomberg", "Microsoft", "Uber", "Google", "IBM", "Netflix"];
+
+// // console.log(comp);
+// // comp.shift();
+
+// // comp.splice(2,1,"Ola");
+
+// comp.push("Amazon");
+
+let n = prompt("enter a Number : ");
+
+let arr = [];
+
+for(let i=1; i<=n; i++)
+{
+    arr[i-1] = i;
+
+}
+
+console.log(arr);
+
+let sum = arr.reduce((res, curr) => {
+    return res+curr;
+});
+
+console.log("Sum = ",sum);
+
+let factorial = arr.reduce((res, curr) => {
+    return res*curr;
+})
+
+console.log("Factorial = ",factorial);
+
+
+
