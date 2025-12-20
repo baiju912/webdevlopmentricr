@@ -23,32 +23,27 @@ const restgame = () => {
   msgconta.classList.add("hide");
 };
 
-let click = 0;
+let count = 0;
 
 boxes.forEach((box) => {
   box.addEventListener("click", () => {
     if (turnO) {
       box.innerText = "O";
       box.style.color = "violet";
-      click++;
+      box.style.backgroundColor = "white";
+      count++;
       turnO = false;
     } else {
       box.innerText = "X";
       box.style.color = "blue";
-      click++;
+      box.style.backgroundColor = "lightgreen";
+      count++;
       turnO = true;
     }
 
     box.disabled = true;
 
     checkwinner();
-    // if (click === 9) {
-    //   if (!showWinner()) {
-    //     msgg.innerText = "Sorry Game is Draw";
-    //     msgconta.classList.remove("hide");
-    //     disab();
-    //   }
-    // }
   });
 });
 
@@ -68,7 +63,14 @@ const enabb = () => {
 const showWinner = (winner) => {
   msgg.innerText = `Congratulations, Winner is ${winner}`;
   msgconta.classList.remove("hide");
+  msgg.style.color = "Green";
   disab();
+};
+
+const noWinner = () => {
+  msgg.innerText = "Sorry Game is Draw";
+  msgconta.classList.remove("hide");
+  msgg.style.color = "red";
 };
 
 const checkwinner = () => {
@@ -80,6 +82,8 @@ const checkwinner = () => {
     if (pos1val != "" && pos2val != "" && pos3val != "") {
       if (pos1val === pos2val && pos1val === pos3val) {
         showWinner(pos1val);
+      } else if (count === 9) {
+        noWinner();
       }
     }
   }
