@@ -20,6 +20,7 @@ const winpatt = [
 const restgame = () => {
   turnO = true;
   enabb();
+  
   msgconta.classList.add("hide");
 };
 
@@ -56,6 +57,8 @@ const disab = () => {
 const enabb = () => {
   for (let box of boxes) {
     box.disabled = false;
+    box.style.backgroundColor = "bisque";
+    count = 0;
     box.innerText = "";
   }
 };
