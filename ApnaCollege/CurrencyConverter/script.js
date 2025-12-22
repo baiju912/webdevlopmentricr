@@ -160,63 +160,62 @@ const countryList = {
   ZWD: "ZW",
 };
 
-//const baseURl = "https://api.exchangerate.host/convert?from=";
-
 const dropDowns = document.querySelectorAll(".dropdown select");
 const btn = document.querySelector("form button");
 const fromCurr = document.querySelector(".from select");
 const toCurr = document.querySelector(".to select");
 const msg = document.querySelector(".msg");
 
-for (let select of dropDowns)
-{
-    for(currCode in countryList)
-    {
-        let newOption = document.createElement("option");
-        newOption.innerText = currCode;
-        if(select.name === "from" && currCode === "USD")
-        {
-            newOption.selected = "selected";
-        }
-        else if(select.name === "to" && currCode === "INR")
-        {
-            newOption.selected = "selected";
-        }
-        select.appendChild(newOption);
+for (let select of dropDowns) {
+  for (currCode in countryList) {
+    let newOption = document.createElement("option");
+    newOption.innerText = currCode;
+    if (select.name === "from" && currCode === "USD") {
+      newOption.selected = "selected";
+    } else if (select.name === "to" && currCode === "INR") {
+      newOption.selected = "selected";
     }
-    select.addEventListener ("change", (eve) => {
-        updateFlag(eve.target);
-    });
+    select.appendChild(newOption);
+  }
+  select.addEventListener("change", (eve) => {
+    updateFlag(eve.target);
+  });
 }
 
-const updateFlag = (element) => {
-    let currCode = element.value;
-    let cuntryCode = countryList[currCode];
-    let newSrc = `https://flagsapi.com/${cuntryCode}/flat/64.png`;
-    let img = element.parentElement.querySelector("img");
-    img.src = newSrc;
+const updateExchangeRate = async () => {
+  let amount = document.querySelector(".amount input");
+  let amtval = amount.value;
+  if (amtval === "" || amtval < 1) {
+    amtval = 1;
+    amount.value = "1";
+  }
+
+  const url = `https://v6.exchangerate-api.com/v6/591e6399986b2551c8e53a51/latest/${fromCurr.value}`;
+
+  try {
+    let response = await fetch(url);
+    let data = await response.json();
+    const val1 = data.conversion_rates[fromCurr.value];
+    const val2 = data.conversion_rates[toCurr.value];
+    let finalAmount = (amtval * val2).toFixed(2);
+    console.log(finalAmount);
+    msg.innerText = `${amtval} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
+  } catch (error) {}
 };
 
-btn.addEventListener ("click", async (eve) => {
-    eve.preventDefault();
-    let amount = document.querySelector(".amount input");
-    let amtval = amount.value;
-    if(amtval ==="" || amtval <1){
-        amtval = 1;
-        amount.value = "1";
-    }
+const updateFlag = (element) => {
+  let currCode = element.value;
+  let cuntryCode = countryList[currCode];
+  let newSrc = `https://flagsapi.com/${cuntryCode}/flat/64.png`;
+  let img = element.parentElement.querySelector("img");
+  img.src = newSrc;
+};
 
-    const URL = `https://api.exchangerate.host/convert?from=${fromCurr.value}&to=${toCurr.value}&amount=${amtval}`;
-  
-    
-    let response = (await fetch(URL));
-    // console.log(response);
-    let  data = await response.json(); 
-    console.log(data);
-//     // let  rate = data[toCurr.value];
-//     let rate = data.result;
-// console.log(rate);
-    let finalAmount = data.result;
-   // console.log(finalAmount);
-    msg.innerText = `${amtval} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
+btn.addEventListener("click", (eve) => {
+  eve.preventDefault();
+  updateExchangeRate();
+});
+
+window.addEventListener("load", () => {
+  updateExchangeRate();
 });

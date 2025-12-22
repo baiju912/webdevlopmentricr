@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electricity Bill Calculator</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div
+        class="container-fluid bg-primary text-center text-light fw-bold display-6 py-2"
+      >
+        Electricity Bill Calculator
+      </div>
+    </header>
+
+    <main>
+      <div
+        class="w-75 h-75 rounded-3 mt-4 p-3 shadow mx-auto bg-primary-subtle"
+      >
+        <div>
+          <label for="unit" class="fs-4 mb-1">Electricity units</label>
+          <input
+            type="number"
+            name="unit"
+            id="unit"
+            placeholder="Enter Electricity unit"
+            class="form-control w-75"
+          />
+        </div>
+        <div class="mt-4 d-flex gap-5">
+          <button
+            class="btn btn-primary fw-bold py-2 w-25"
+            onclick="calculate()"
+          >
+            Calculate
+          </button>
+          <button class="btn btn-danger fw-bold py-2 w-25" onclick="reset()">
+            Reset
+          </button>
+        </div>
+        <h3
+          class="w-100 text-center mt-2 bg-success text-light rounded-3 border border-1"
+        >
+          OUTPUT
+        </h3>
+
+        <div class="d-flex justify-content-center mt-5 mx-auto">
+          <div class="h-25 w-50 rounded-3 shadow p-2 px-4 bg-success-subtle">
+            <h1 class="text-center">Total Bill</h1>
+
+            <p class="fw-bold text-primary" id="total">Sub Total = 0 ₹</p>
+            <p class="fw-bold text-primary" id="sur">Surcharge amount = 0 ₹</p>
+            <p class="fw-bold text-primary fs-5" id="gnfinl">
+              Grand total = 0 ₹
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
