@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Website</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div
+        class="d-flex justify-content-between align-items-center gap-2 bg-primary text-light px-5 fs-5 fw-bold border-bottom"
+        style="min-height: 10vh"
+      >
+        <img
+        class="rounded-5"
+          style="object-fit: cover " 
+          src="./image.png"
+          width="50px"
+          alt=""
+        />
+        <div class="d-flex gap-4">
+          <div class="ms-5">
+            <a class="text-light text-decoration-none" href="./index.html"
+              >Home</a
+            >
+          </div>
+          <div>
+            <a class="text-light text-decoration-none" href="./about.html"
+              >About</a
+            >
+          </div>
+          <div>
+            <a
+              class="text-light text-decoration-none"
+              onclick="shop()"
+              href="./products.html"
+              >Products</a
+            >
+          </div>
+          <div>
+            <a class="text-light text-decoration-none" href="./contact.html"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div style="margin-top: 120px; margin-bottom: 50px">
+      <h3 class="text-center">Product Details</h3>
+    </div>
+
+    <main >
+      <div id="product">
+        <!-- <div
+        class="d-flex justify-content-between gap-5 border border-1 shadow rounded-4 p-2 w-75 mx-auto mb-3"
+      >
+        <div class="text-center ms-4">
+          <img
+            class="object-fit-cover"
+            src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png"
+            height="300px"
+            alt="Image"
+          />
+        </div>
+        <div class="">
+          <h3 class="mt-4">
+            Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
+          </h3>
+          <h4>Amount:- 109.95$</h4>
+          <p>
+            <b> Description:-</b> Your perfect pack for everyday use and walks
+            in the forest. Stash your laptop (up to 15 inches) in the padded
+            sleeve, your everyday
+          </p>
+          <p class="fw-bold">Category :- Men's clothing</p>
+          <p><b>Rating -</b> 3.9/5 (120)</p>
+          <a href="./itemData.html"
+            ><button class="btn btn-primary mb-4 w-25">Buy Now</button></a
+          >
+        </div>
+      </div>
+      </div>
+
+      <div
+        class="d-flex justify-content-between gap-5 border border-1 shadow rounded-4 p-2 w-75 mx-auto mb-3"
+      >
+        <div class="text-center ms-4">
+          <img
+            class="object-fit-cover"
+            src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png"
+            height="300px"
+            alt="Image"
+          />
+        </div>
+        <div class="">
+          <h3 class="mt-4">
+            Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
+          </h3>
+          <h4>Amount:- 109.95$</h4>
+          <p>
+            <b> Description:-</b> Your perfect pack for everyday use and walks
+            in the forest. Stash your laptop (up to 15 inches) in the padded
+            sleeve, your everyday
+          </p>
+          <p class="fw-bold">Category :- Men's clothing</p>
+          <p><b>Rating -</b> 3.9/5 (120)</p>
+          <a href="./itemData.html"
+            ><button class="btn btn-primary mb-4 w-25">Buy Now</button></a
+          >
+        </div> -->
+        
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
