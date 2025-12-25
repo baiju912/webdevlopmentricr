@@ -1,8 +1,8 @@
-
-
 async function productlist() {
   try {
-    const item = await fetch("https://fakestoreapi.com/products");
+    const item = await fetch(
+      "https://makeup-api.herokuapp.com/api/v1/products.json"
+    );
 
     const dataa = await item.json();
 
@@ -17,20 +17,20 @@ async function productlist() {
               <div class="h-50 mb-1 text-center">
                 <img
                   class="object-fit-contain"
-                  src=${ele.image}
+                  src=${ele.image_link}
                   height = 180px;
-                  alt=""
+                  alt="${ele.name}"
                 />
               </div>
-              <div class="h-25">
-                <div class="fw-bold fs-5">${ele.title.slice(0, 30)}</div>
+              <div class="h-50">
+                <div class="fw-bold fs-5">${ele.name.slice(0, 30)}</div>
                 
-                <div class="">${ele.rating.rate}/5(${ele.rating.count})</div>
-                <div class="fw-semibold fs-5">Rs:-${(ele.price * 80).toFixed(
+                <div><b>Brand:-</b>${ele.brand}</div>
+                <div class="fw-semibold fs-5">Rs:- ${(ele.price * 80).toFixed(
                   2
                 )} ₹ </div>
                 <div class="mb-2">
-                  <b>Description:-</b> ${ele.description.slice(0, 100)}
+                  <b>Description:-</b> ${ele.description.slice(0, 50)}
                 </div>
 
                 <div class="mb-1">
@@ -42,7 +42,7 @@ async function productlist() {
                   <button class="btn btn-primary">Buy Now</button>
                 </div>
               </div>
-           
+           </div>
       `;
       prod.appendChild(di);
     });
@@ -55,7 +55,9 @@ productlist();
 
 async function productlist1() {
   try {
-    const item = await fetch("https://fakestoreapi.com/products");
+    const item = await fetch(
+      "https://makeup-api.herokuapp.com/api/v1/products.json"
+    );
 
     const dataa = await item.json();
 
@@ -63,7 +65,7 @@ async function productlist1() {
 
     dataa.forEach((ele) => {
       const di = document.createElement("div");
-       di.classList.add("mt-3");
+      di.classList.add("mt-3");
 
       di.innerHTML = `
       
@@ -72,17 +74,17 @@ async function productlist1() {
               <div class="col-3 mb-1 text-center">
                 <img
                   class="object-fit-contain"
-                  src=${ele.image}
+                  src=${ele.image_link}
                   height = 180px;
                   width = 180px;
-                  alt=""
+                  alt="${ele.name}"
                 />
               </div>
               <div class="col-9">
            
-                <div class="fw-bold fs-5">${ele.title.slice(0, 30)}</div>
+                <div class="fw-bold fs-5">${ele.name.slice(0, 30)}</div>
                 
-                <div class="">${ele.rating.rate}/5(${ele.rating.count})</div>
+                <div><b>Brand:-</b>${ele.brand}</div>
                 <div class="fw-semibold fs-5">Rs:-${(ele.price * 80).toFixed(
                   2
                 )} ₹ </div>
