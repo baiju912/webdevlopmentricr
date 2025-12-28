@@ -14,15 +14,15 @@ async function productlist() {
 
       di.innerHTML = `
       <div class="card border rounded-3 shadow p-3 h-100">
-              <div class="h-50 mb-1 text-center">
+              <div class="h-50 ">
                 <img
-                  class="object-fit-contain"
+                  class="w-100 h-100 object-fit-contain"
                   src=${ele.image_link}
-                  height = 180px;
+                  
                   alt="${ele.name}"
                 />
               </div>
-              <div class="h-50">
+              <div class="h-50 p-2">
                 <div class="fw-bold fs-5">${ele.name.slice(0, 30)}</div>
                 
                 <div><b>Brand:-</b>${ele.brand}</div>

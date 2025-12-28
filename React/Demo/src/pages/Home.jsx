@@ -4,7 +4,7 @@ import React from "react";
     return (
        <>
        <div>
-        <div className="bg-primary text-light text-center fs-4 p-2 ">
+        <div className=" bg-success text-light text-center fs-4 p-2 ">
     This is my First React App
   </div>
 
