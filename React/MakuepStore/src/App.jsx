@@ -9,14 +9,13 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Product from "./Pages/Product";
 
-
 function App() {
-  return(
+  return (
     <>
-    <BrowserRouter>
+      <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route  path="/"   element={< Home />}  />
           <Route path="/About" element={<About />} />
           <Route path="/Product" element={<Product />} />
           <Route path="/Contact" element={<Contact />} />
@@ -24,9 +23,8 @@ function App() {
 
         <Footer />
       </BrowserRouter>
-    
     </>
   );
-};
+}
 
 export default App;
