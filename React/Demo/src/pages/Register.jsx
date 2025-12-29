@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-const Contact = () => {
+const Register = () => {
   const [contactData, setContactData] = useState({
     fullname: "",
     email: "",
     phone: "",
     city: "",
-    subject: "",
-    message: "",
+    password: "",
+    
   });
   const [isLoading, setIsLoading] = useState(false);
 
@@ -22,8 +22,8 @@ const Contact = () => {
       email: "",
       phone: "",
       city: "",
-      subject: "",
-      message: "",
+      password: "",
+      
     });
   };
 
@@ -43,7 +43,7 @@ const Contact = () => {
   return (
     <>
       <div className=" text-center">
-        <h1>Contact Us </h1>
+        <h1>Register </h1>
         <div className=" container h-50 w-50 border bg-primary-subtle rounded-3 shadow mb-5">
           <form onReset={handleClearForm} onSubmit={handleSubmit}>
             <div className="mt-3 fs-5 mb-3">
@@ -103,31 +103,20 @@ const Contact = () => {
             </div>
 
             <div className="mb-4 fs-5">
-              <label htmlFor="subject">Subject : </label>
+              <label htmlFor="password">Password : </label>
               <input
                 required
-                type="text"
-                name="subject"
-                id="subject"
-                value={contactData.subject}
+                type="password"
+                name="password"
+                id="password"
+                value={contactData.password}
                 onChange={handleChange}
-                placeholder="Enter your Subject"
+                placeholder="Enter your Password"
                 className="text-primary  ms-lg-5"
               />
             </div>
 
-            <div className="mb-4 fs-5">
-              <label htmlFor="message">Message : </label>
-              <textarea
-                required
-                name="message"
-                id="message"
-                value={contactData.message}
-                onChange={handleChange}
-                placeholder="Enter your Message"
-                className=" text-primary ms-5"
-              ></textarea>
-            </div>
+            
 
             <div className="mb-5">
               <button type="reset" className="btn btn-danger me-4">
@@ -146,4 +135,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Register;
