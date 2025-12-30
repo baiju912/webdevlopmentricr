@@ -123,7 +123,7 @@ const Register = () => {
                 {" "}
                 Clear Form
               </button>
-              <button type="submit" className="btn btn-success">
+              <button type="submit" className="btn btn-success px-2">
                 {" "}
                 {isLoading ? "Loading" : "Submit"}
               </button>
