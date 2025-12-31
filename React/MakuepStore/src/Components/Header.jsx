@@ -1,19 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
- import { FaHome } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 
 const Header = () => {
   return (
     <>
-      <div className=" flex justify-between px-4 py-2 p-1 bg-orange-500">
+      <div className=" flex justify-between px-4 py-2 p-1 bg-[#f48498]">
         <h3 className=" text-white text-2xl">MakeupStore</h3>
         <div className=" flex gap-6 text-2xl">
           <Link
             to="/"
             className="flex gap-1 text-white text-decoration-none hover:text-green-500 hover:font-bold"
           >
-            
-           <FaHome className=' mt-1' / > Home
+            <FaHome className=" mt-1" /> Home
           </Link>
           <Link
             to={"/About"}

@@ -8,12 +8,27 @@ const Contact = () => {
     city: "",
     subject: "",
     message: "",
+    religion: "",
+    gender:"",
+    skill : [],
   });
   const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setContactData((previousData) => ({ ...previousData, [name]: value }));
+    const { name, value, type, checked } = e.target;
+    if (type === "checkbox") {
+      let temp = contactData.skill;
+      if (checked) {
+        temp.push(value);
+        setContactData((previousData) => ({ ...previousData, [name]: temp }));
+      } else {
+        temp = Object.values(temp); 
+        temp = temp.filter((word) => word !== value); //Remove the Undersired Value
+        setContactData((previousData) => ({ ...previousData, [name]: temp }));
+      }
+    } else {
+      setContactData((previousData) => ({ ...previousData, [name]: value }));
+    }
   };
 
   const handleClearForm = () => {
@@ -24,6 +39,9 @@ const Contact = () => {
       city: "",
       subject: "",
       message: "",
+      religion: "",
+      gender:"",
+      skill : [],
     });
   };
 
@@ -114,6 +132,116 @@ const Contact = () => {
                 placeholder="Enter your Subject"
                 className="text-primary  ms-lg-5"
               />
+            </div>
+            <div className="mt-3 fs-5 mb-3">
+              <label htmlFor="religion">Religion</label>
+              <select
+                name="religion"
+                id="religion"
+                onChange={handleChange}
+                value={contactData.religion}
+                className=" ms-lg-5"
+              >
+                <option value="">--Select Religion--</option>
+                <option value="islam">Islam</option>
+                <option value="hinduism">Hinduism</option>
+                <option value="christianity">Christianity</option>
+                <option value="buddhism">Buddhism</option>
+                <option value="jainism">Jainism</option>
+                <option value="sikhism">Sikhism</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div className="mt-3 fs-5 mb-3">
+              <label htmlFor="gender">Gender</label>
+              <input
+                type="radio"
+                name="gender"
+                value="male"
+                onChange={handleChange}
+                checked={contactData.gender === "male"}
+                className=" ms-5"
+              />{" "}
+              Male
+              <input
+                type="radio"
+                name="gender"
+                value="female"
+                onChange={handleChange}
+                checked={contactData.gender === "female"}
+                className=" ms-3"
+              />{" "}
+              Female
+              <input
+                type="radio"
+                name="gender"
+                value="other"
+                onChange={handleChange}
+                checked={contactData.gender === "other"}
+                className="  ms-3"
+              />{" "}
+              Other
+            </div>
+
+            <div className="mt-3 fs-5 mb-3">
+              <label htmlFor="skill">Skill known</label>
+              <input
+                type="checkbox"
+                name="skill"
+                value="html"
+                onChange={handleChange}
+                checked={
+                  Object.values(contactData.skill).find(
+                    (word) => word === "html"
+                  )
+                    ? true
+                    : false
+                }
+                className="  ms-5"
+              />{" "}
+              HTML
+              <input
+                type="checkbox"
+                name="skill"
+                value="css"
+                onChange={handleChange}
+                checked={
+                  Object.values(contactData.skill).find(
+                    (word) => word === "css"
+                  )
+                    ? true
+                    : false
+                }
+                className="  ms-3"
+              />{" "}
+              CSS
+              <input
+                type="checkbox"
+                name="skill"
+                value="js"
+                onChange={handleChange}
+                checked={
+                  Object.values(contactData.skill).find(
+                    (word) => word === "js"
+                  )
+                    ? true
+                    : false
+                }
+                className="  ms-3"
+              />{" "}
+              JS
+              <input
+                type="checkbox"
+                name="skill"
+                value="react"
+                onChange={handleChange}
+                checked={
+                  Object.values(contactData.skill).includes("react")
+                }
+                className="  ms-3"
+              />{" "}
+              React
             </div>
 
             <div className="mb-4 fs-5">

@@ -31,9 +31,10 @@ const Login = () => {
 
   return (
     <>
-      <div className=" text-center">
-        <h1>Login / Register </h1>
-        <div className=" container h-50 w-50 border bg-primary-subtle rounded-3 shadow mb-4">
+      <div className=" text-center pt-5">
+       
+        <div className=" container h-50 w-50 border bg-primary-subtle rounded-3  shadow mb-4">
+           <h1>Login </h1>
           <form  onSubmit={handleSubmit}>
             <div className="mt-3 fs-5 mb-3">
               <label htmlFor="username">User Name : </label>
@@ -66,12 +67,12 @@ const Login = () => {
             
 
             <div className="mb-5">
-                <button type="register" className="btn  btn-primary me-4">
+                {/* <button type="register" className="btn  btn-primary me-4">
                 {" "}
                 Register
-              </button>
+              </button> */}
               
-              <button type="submit" className="btn btn-success">
+              <button type="submit" className="btn btn-success px-4">
                 {" "}
                 {isLoading ? "Loading" : "Login"}
               </button>

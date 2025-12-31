@@ -42,9 +42,10 @@ const Register = () => {
 
   return (
     <>
-      <div className=" text-center">
-        <h1>Register </h1>
+      <div className=" text-center pt-5">
+        
         <div className=" container h-50 w-50 border bg-primary-subtle rounded-3 shadow mb-5">
+          <h1>Register </h1>
           <form onReset={handleClearForm} onSubmit={handleSubmit}>
             <div className="mt-3 fs-5 mb-3">
               <label htmlFor="fullname">Full Name : </label>

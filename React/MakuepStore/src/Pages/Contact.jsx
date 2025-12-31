@@ -3,7 +3,7 @@ import React from "react";
 function Contact() {
   return (
     <>
-      <div className="h-90 w-130 border shadow-2xl rounded-2xl bg-yellow-100 mx-auto mt-20 mb-30">
+      <div className="h-90 w-130 border shadow-2xl rounded-2xl bg-[#e78f8e] mx-auto mt-20 mb-30">
         <h2 className=" text-center text-blue-500 text-4xl font-bold mt-3">
           Contact Us
         </h2>
@@ -43,7 +43,7 @@ function Contact() {
             ></textarea>
           </div>
           <div className="text-center mt-4 ">
-            <button className=" border w-30 px-4 py-2 font-bold bg-yellow-400 text-green-500 rounded-2xl hover:bg-blue-500 hover:text-white">
+            <button className=" border w-30 px-4 py-2 shadow-lg font-bold bg-[#3b28cc] text-[#ef233c] rounded-2xl  hover:bg-[#f48498] hover:text-white">
               Submit
             </button>
           </div>

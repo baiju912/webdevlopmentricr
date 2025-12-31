@@ -11,8 +11,10 @@ import { Link } from "react-router-dom";
                 <Link to={"/About"} className="text-light text-decoration-none">About</Link>
                 <Link to={"/Product"} className="text-light text-decoration-none">Product</Link>
                 <Link to={"/Contact"} className="text-light text-decoration-none">Contact</Link>
-                <Link to={"/Login"} className="text-light text-decoration-none">Login</Link>
-                <Link to={"/Register"} className="text-light text-decoration-none">Register</Link>
+               
+                 <Link to={"/Login"} className="text-light text-decoration-none bg-success rounded-2 px-3 pt-1">Login</Link>
+                <Link to={"/Register"} className="text-light text-decoration-none  bg-success rounded-2 px-3 pt-1">Register</Link>
+               
                 
 
             </div>
