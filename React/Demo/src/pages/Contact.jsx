@@ -10,7 +10,7 @@ const Contact = () => {
     message: "",
     religion: "",
     gender:"",
-    skill : [],
+    skill : [],     
   });
   const [isLoading, setIsLoading] = useState(false);
 

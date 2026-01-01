@@ -4,7 +4,7 @@ function Contact() {
   return (
     <>
       <div className="h-90 w-130 border shadow-2xl rounded-2xl bg-[#e78f8e] mx-auto mt-20 mb-30">
-        <h2 className=" text-center text-blue-500 text-4xl font-bold mt-3">
+        <h2 className=" text-center text-blue-500   text-4xl font-bold mt-3">
           Contact Us
         </h2>
         <div className="grid drid-col-3 gap-5 p-6 text-strart ms-12">
