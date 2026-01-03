@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 
   const Home = () => {
     return (
@@ -7,6 +8,10 @@ import React from "react";
         <div className=" bg-success text-light text-center fs-4 p-2 ">
     This is my First React App
   </div>
+
+  <motion.div whileTap={{scale:0.5}} className=" ms-5 mt-3 mb-3 bg-primary" style={{width:"100px",height:"100px",rounded:"50%"}}>
+ 
+  </motion.div>
 
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae et laboriosam quidem commodi, eos iusto. Mollitia minus corporis itaque commodi, blanditiis corrupti quis, non eaque reprehenderit deserunt accusamus fugit! Placeat.
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea aut cumque deserunt ipsam. Facere voluptates obcaecati nisi vero facilis laborum optio id nobis praesentium consequuntur a magni, suscipit provident animi?
