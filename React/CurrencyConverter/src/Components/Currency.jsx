@@ -51,7 +51,7 @@ const Currency = () => {
           <div className="flex justify-between w-full gap-2">
             <fieldset className="border bg-white border-blue-500  rounded">
               <legend className="ms-5 font-bold"> From </legend>
-              <div className="flex gap-2  w-75 px-2">
+              <div className="flex gap-2  w-75 px-3">
                 {from && (
                   <img
                     src={`https://flagsapi.com/${
