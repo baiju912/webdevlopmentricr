@@ -26,7 +26,8 @@ const Regstration = () => {
     const { name, value, type, checked } = e.target;
     if (type === "checkbox") {
       let temp = regstrationData.batch;
-
+  
+      
       if (checked) {
         temp.push(value);
         setRegstrationData((previousData) => ({
@@ -217,11 +218,12 @@ const Regstration = () => {
                   <div className="flex gap-3">
                     <input
                       type="checkbox"
-                      name="batch"
+                      name="batch" 
+                      value="morning"
                       id="morning"
                       onChange={handleChange}
                       checked={Object.values(regstrationData.batch).includes(
-                        "react"
+                        "morning"
                       )}
                     />{" "}
                     Morning
@@ -229,10 +231,11 @@ const Regstration = () => {
                       type="checkbox"
                       name="batch"
                       id="evening"
+                      value="evening"
                       className="ms-8"
                       onChange={handleChange}
                       checked={Object.values(regstrationData.batch).includes(
-                        "react"
+                        "evening"
                       )}
                     />{" "}
                     Evening
@@ -240,21 +243,23 @@ const Regstration = () => {
                       type="checkbox"
                       name="batch"
                       id="afternoon"
+                      value="afternoon"
                       className="ms-8"
                       onChange={handleChange}
                       checked={Object.values(regstrationData.batch).includes(
-                        "react"
+                        "afternoon"
                       )}
                     />{" "}
                     Afternoon
                     <input
                       type="checkbox"
                       name="batch"
+                      value="weekends"
                       id="weekends"
                       className="ms-8"
                       onChange={handleChange}
                       checked={Object.values(regstrationData.batch).includes(
-                        "react"
+                        "weekends"
                       )}
                     />{" "}
                     Weekends
@@ -354,9 +359,10 @@ const Regstration = () => {
                       type="checkbox"
                       name="adds"
                       id="friend"
+                      value={friend}
                       onChange={handleChange}
                       checked={Object.values(regstrationData.adds).includes(
-                        "react"
+                        "friend"
                       )}
                     />
                     Friends
@@ -364,10 +370,11 @@ const Regstration = () => {
                       type="checkbox"
                       name="adds"
                       id="onlinead"
+                      value={onlinead}
                       className="ms-8"
                       onChange={handleChange}
                       checked={Object.values(regstrationData.adds).includes(
-                        "react"
+                        "onlinead"
                       )}
                     />
                     Online Ad
@@ -375,10 +382,11 @@ const Regstration = () => {
                       type="checkbox"
                       name="adds"
                       id="newspaper"
+                      value={newspaper}
                       className="ms-8"
                       onChange={handleChange}
                       checked={Object.values(regstrationData.adds).includes(
-                        "react"
+                        "newspaper"
                       )}
                     />{" "}
                     NewsPaper
@@ -386,10 +394,11 @@ const Regstration = () => {
                       type="checkbox"
                       name="adds"
                       id="media"
+                      value={media}
                       className="ms-8"
                       onChange={handleChange}
                       checked={Object.values(regstrationData.adds).includes(
-                        "react"
+                        "media"
                       )}
                     />{" "}
                     Social Media
@@ -397,10 +406,11 @@ const Regstration = () => {
                       type="checkbox"
                       name="adds"
                       id="other"
+                      value={other}
                       className="ms-8"
                       onChange={handleChange}
                       checked={Object.values(regstrationData.adds).includes(
-                        "react"
+                        "other"
                       )}
                     />{" "}
                     Other

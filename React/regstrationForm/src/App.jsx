@@ -11,8 +11,8 @@ const App = () => {
     <Toaster/>
 
     <Header/>
-    {/* <Regstration/> */}
-    <CoachingRegForm/>
+    <Regstration/>
+    {/* <CoachingRegForm/> */}
     <Footer/>
     </>
   );

@@ -16,6 +16,9 @@ const Currency = () => {
     setFrom(to);
     setTo(temp);
     console.log(temp);
+    console.log(to);
+    
+
     
   }
 
