@@ -18,15 +18,13 @@ const Currency = () => {
     console.log(temp);
     console.log(to);
     
-
-    
   }
-
-
   const Convert = async () => {
     if (!from || !to || !fromAmt) {
       toast.error("Some fields missing");
       return;
+      console.log(from);
+      
     }
 
     try {
