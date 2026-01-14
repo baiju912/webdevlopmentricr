@@ -11,6 +11,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
+        <Toaster />
         <Header />
 
         <Routes>
@@ -22,6 +23,7 @@ const App = () => {
         </Routes>
       </BrowserRouter>
     </>
+    
   );
 };
 
