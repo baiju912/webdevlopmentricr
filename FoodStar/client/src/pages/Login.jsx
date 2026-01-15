@@ -2,8 +2,11 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import api from "../config/Api";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+
+  const navigate = useNavigate();
  const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -136,7 +139,15 @@ const Login = () => {
                 >
                   {isLoading ? "Submitting" : "Login"}
                 </button>
-                <div>Register Now</div>
+                
+              </div>
+              <div className=" mt-5 text-center flex justify-center gap-5">
+                <div>
+                  Don't have an account?
+                </div>
+                <button className="text-blue-600 cursor-pointer hover:shadow-2xl hover:scale-105" onClick={ () => navigate("/register")}>
+                  Register Now
+                </button>
               </div>
             </form>
           </div>

@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import api from "../config/Api";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Register = () => {
+
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -181,6 +184,15 @@ const Register = () => {
                   className="flex-1 bg-linear-to-r from-indigo-600 to-indigo-700 disabled:cursor-not-allowed disabled:scale-100 disabled:from-indigo-800 text-white font-bold py-4 px-6 rounded-lg hover:from-indigo-700 hover:to-indigo-800 transition duration-300 transform hover:scale-105 shadow-lg"
                 >
                   {isLoading ? "Submitting" : "Submit"}
+                </button>
+              </div>
+
+               <div className=" mt-5 text-center flex justify-center gap-5">
+                <div>
+                  Already have an account?
+                </div>
+                <button className="text-blue-600 cursor-pointer hover:shadow-2xl hover:scale-105" onClick={ () => navigate("/login")}>
+                  Login Now
                 </button>
               </div>
             </form>
