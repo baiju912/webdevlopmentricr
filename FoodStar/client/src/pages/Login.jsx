@@ -136,6 +136,7 @@ const Login = () => {
                 >
                   {isLoading ? "Submitting" : "Login"}
                 </button>
+                <div>Register Now</div>
               </div>
             </form>
           </div>
