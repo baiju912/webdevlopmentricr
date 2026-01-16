@@ -1,16 +1,13 @@
-
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import api from "../config/Api";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-
   const navigate = useNavigate();
- const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
     email: "",
     password: "",
-    
   });
   const [isLoading, setIsLoading] = useState(false);
   const [validationError, setValidationError] = useState({});
@@ -24,14 +21,11 @@ const Login = () => {
     setFormData({
       email: "",
       password: "",
-      
     });
   };
 
   const validate = () => {
     let Error = {};
-
-    
 
     if (
       !/^[\w\.]+@(gmail|outlook|ricr|yahoo)\.(com|in|co.in)$/.test(
@@ -40,8 +34,6 @@ const Login = () => {
     ) {
       Error.email = "Use Proper Email Format";
     }
-
-    
 
     setValidationError(Error);
 
@@ -59,7 +51,6 @@ const Login = () => {
     }
 
     console.log(formData);
-    
 
     try {
       const res = await api.post("/auth/login", formData);
@@ -79,9 +70,7 @@ const Login = () => {
         <div className="max-w-xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-2">
-              Login
-            </h1>
+            <h1 className="text-4xl font-bold text-gray-900 mb-2">Login</h1>
             <p className="text-lg text-gray-600">
               You are 1 step away to stop your Cavings
             </p>
@@ -97,7 +86,6 @@ const Login = () => {
               {/* Personal Information */}
               <div className="mb-10">
                 <div className="space-y-4">
-                  
                   <input
                     type="email"
                     name="email"
@@ -108,7 +96,7 @@ const Login = () => {
                     disabled={isLoading}
                     className="w-full h-fit px-4 py-3 disabled:bg-gray-200 disabled:cursor-not-allowed border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
                   />
-                  
+
                   <input
                     type="password"
                     name="password"
@@ -119,7 +107,6 @@ const Login = () => {
                     disabled={isLoading}
                     className="w-full px-4 py-3 border-2 disabled:bg-gray-200 disabled:cursor-not-allowed border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
                   />
-                  
                 </div>
               </div>
 
@@ -137,15 +124,15 @@ const Login = () => {
                   disabled={isLoading}
                   className="flex-1 bg-linear-to-r from-indigo-600 to-indigo-700 disabled:cursor-not-allowed disabled:scale-100 disabled:from-indigo-800 text-white font-bold py-4 px-6 rounded-lg hover:from-indigo-700 hover:to-indigo-800 transition duration-300 transform hover:scale-105 shadow-lg"
                 >
-                  {isLoading ? "Submitting" : "Login"}
+                  {isLoading ? "loading" : "Login"}
                 </button>
-                
               </div>
               <div className=" mt-5 text-center flex justify-center gap-5">
-                <div>
-                  Don't have an account?
-                </div>
-                <button className="text-blue-600 cursor-pointer hover:shadow-2xl hover:scale-105" onClick={ () => navigate("/register")}>
+                <div>Don't have an account?</div>
+                <button
+                  className="text-blue-600 cursor-pointer hover:shadow-2xl hover:scale-105"
+                  onClick={() => navigate("/register")}
+                >
                   Register Now
                 </button>
               </div>
@@ -160,8 +147,6 @@ const Login = () => {
       </div>
     </>
   );
-  
-  
 };
 
 export default Login;

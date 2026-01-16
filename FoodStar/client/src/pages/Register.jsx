@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import api from "../config/Api";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
-
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: "",
@@ -70,7 +69,6 @@ const Register = () => {
     }
 
     console.log(formData);
-    
 
     try {
       const res = await api.post("/auth/register", formData);
@@ -187,11 +185,12 @@ const Register = () => {
                 </button>
               </div>
 
-               <div className=" mt-5 text-center flex justify-center gap-5">
-                <div>
-                  Already have an account?
-                </div>
-                <button className="text-blue-600 cursor-pointer hover:shadow-2xl hover:scale-105" onClick={ () => navigate("/login")}>
+              <div className=" mt-5 text-center flex justify-center gap-5">
+                <div>Already have an account?</div>
+                <button
+                  className="text-blue-600 cursor-pointer hover:shadow-2xl hover:scale-105"
+                  onClick={() => navigate("/login")}
+                >
                   Login Now
                 </button>
               </div>
