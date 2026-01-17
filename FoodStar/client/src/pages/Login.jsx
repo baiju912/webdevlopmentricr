@@ -56,6 +56,7 @@ const Login = () => {
       const res = await api.post("/auth/login", formData);
       toast.success(res.data.message);
       handleClearForm();
+      navigate("/user-dashboards")
     } catch (error) {
       console.log(error);
       toast.error(error.message);
