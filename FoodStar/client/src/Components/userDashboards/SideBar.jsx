@@ -53,6 +53,8 @@ const SideBar = ({ active, setActive, show, setShow }) => {
           >
             <TbTransactionRupee />
             {show && "Transaction"}
+            console.log(show);
+            
           </button>
           <button
             className={`flex gap-3 items-center p-3 rounded-xl hover:cursor-pointer hover:scale-110 ${active === "helpdesk" ? "bg-(--color-secondary) text-white" : "hover:bg-gray-100/70"}`}
