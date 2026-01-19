@@ -11,7 +11,7 @@ const SideBar = ({ active, setActive, show, setShow }) => {
   return (
     <>
       <div className="p-2">
-        <div className="flex gap-4 items-center mb-2 font-bold text-xl">
+        <div className="flex gap-4 h-10 items-center mb-2 font-bold ">
           <button onClick={() => setShow(!show)}>
             {show ? (
               <IoCloseSharp className=" hover:cursor-pointer ms-4  text-2xl" />
@@ -19,7 +19,7 @@ const SideBar = ({ active, setActive, show, setShow }) => {
               <GiHamburgerMenu className=" hover:cursor-pointer ms-4 text-2xl" />
             )}{" "}
           </button>
-          <div className="text-xl  text-center font-bold">
+          <div className="text-xl overflow-hidden text-nowrap text-center font-bold">
             {" "}
             {show && "User Dashboard"}
           </div>
@@ -27,13 +27,13 @@ const SideBar = ({ active, setActive, show, setShow }) => {
         <hr />
         <div className="grid gap-3 p-3">
           <button
-            className={`flex gap-3 items-center p-3 rounded-xl hover:cursor-pointer hover:scale-110 ${active === "overview" ? "bg-(--color-secondary) text-white" : "hover:bg-gray-100/70"}`}
+            className={`flex gap-3 items-center p-3 h-10 text-nowrap overflow-hidden rounded-xl hover:cursor-pointer hover:scale-110 ${active === "overview" ? "bg-(--color-secondary) text-white" : "hover:bg-gray-100/70"}`}
             onClick={() => setActive("overview")}
           >
             <TbChartTreemap /> {show && "Overview"}
           </button>
           <button
-            className={`flex gap-3 items-center p-3 rounded-xl hover:cursor-pointer hover:scale-110 ${active === "profile" ? "bg-(--color-secondary) text-white" : "hover:bg-gray-100/70"}`}
+            className={`flex gap-3 items-center p-3  h-10 rounded-xl text-nowrap overflow-hidden hover:cursor-pointer hover:scale-110 ${active === "profile" ? "bg-(--color-secondary) text-white" : "hover:bg-gray-100/70"}`}
             onClick={() => setActive("profile")}
           >
             {" "}
@@ -41,23 +41,23 @@ const SideBar = ({ active, setActive, show, setShow }) => {
             {show && "Profile"}
           </button>
           <button
-            className={`flex gap-3 items-center p-3 rounded-xl hover:cursor-pointer hover:scale-110 ${active === "order" ? "bg-(--color-secondary) text-white" : "hover:bg-gray-100/70"}`}
+            className={`flex gap-3 items-center p-3 h-10 rounded-xl text-nowrap overflow-hidden hover:cursor-pointer hover:scale-110 ${active === "order" ? "bg-(--color-secondary) text-white" : "hover:bg-gray-100/70"}`}
             onClick={() => setActive("order")}
           >
             <FaShoppingCart />
             {show && "Orders"}
           </button>
           <button
-            className={`flex gap-3 items-center p-3 rounded-xl hover:cursor-pointer hover:scale-110 ${active === "transaction" ? "bg-(--color-secondary) text-white" : "hover:bg-gray-100/70"}`}
+            className={`flex gap-3 items-center p-3 h-10 rounded-xl text-nowrap overflow-hidden hover:cursor-pointer hover:scale-110 ${active === "transaction" ? "bg-(--color-secondary) text-white" : "hover:bg-gray-100/70"}`}
             onClick={() => setActive("transaction")}
           >
             <TbTransactionRupee />
             {show && "Transaction"}
-            console.log(show);
+           
             
           </button>
           <button
-            className={`flex gap-3 items-center p-3 rounded-xl hover:cursor-pointer hover:scale-110 ${active === "helpdesk" ? "bg-(--color-secondary) text-white" : "hover:bg-gray-100/70"}`}
+            className={`flex gap-3 items-center p-3 h-10 rounded-xl text-nowrap overflow-hidden hover:cursor-pointer hover:scale-110 ${active === "helpdesk" ? "bg-(--color-secondary) text-white" : "hover:bg-gray-100/70"}`}
             onClick={() => setActive("helpdesk")}
           >
             {" "}
