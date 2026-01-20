@@ -1,8 +1,10 @@
 import React from "react";
 import tranparentLogo from "../assets/tranprent.png";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const Header = () => {
+  const { user, isLogin } = useAuth();
   const navigate = useNavigate();
 
   return (
@@ -36,18 +38,24 @@ const Header = () => {
           </Link>
         </div>
         <div>
-          <button
-            className="bg-(--color-secondary) py-2  me-5 px-4 font-bold hover:bg-(--color-secondary-hover) hover:text-white rounded "
-            onClick={() => navigate("/login")}
-          >
-            Login
-          </button>
-          <button
-            className="bg-(--color-secondary) py-2 px-4 font-bold hover:bg-(--color-secondary-hover) hover:text-white rounded  "
-            onClick={() => navigate("/register")}
-          >
-            Register
-          </button>
+          {isLogin ? 
+            <span className="text-red-500">{user.fullName}</span>
+          : 
+            <div>
+              <button
+                className="bg-(--color-secondary) py-2  me-5 px-4 font-bold hover:bg-(--color-secondary-hover) hover:text-white rounded "
+                onClick={() => navigate("/login")}
+              >
+                Login
+              </button>
+              <button
+                className="bg-(--color-secondary) py-2 px-4 font-bold hover:bg-(--color-secondary-hover) hover:text-white rounded  "
+                onClick={() => navigate("/register")}
+              >
+                Register
+              </button>
+            </div>
+          }
         </div>
       </div>
     </>

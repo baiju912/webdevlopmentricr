@@ -11,7 +11,7 @@ const SideBar = ({ active, setActive, show, setShow }) => {
   return (
     <>
       <div className="p-2">
-        <div className="flex gap-4 h-10 items-center mb-2 font-bold ">
+        <div className="flex gap-4 h-10 items-center mb-2 font-bold">
           <button onClick={() => setShow(!show)}>
             {show ? (
               <IoCloseSharp className=" hover:cursor-pointer ms-4  text-2xl" />
@@ -53,8 +53,6 @@ const SideBar = ({ active, setActive, show, setShow }) => {
           >
             <TbTransactionRupee />
             {show && "Transaction"}
-           
-            
           </button>
           <button
             className={`flex gap-3 items-center p-3 h-10 rounded-xl text-nowrap overflow-hidden hover:cursor-pointer hover:scale-110 ${active === "helpdesk" ? "bg-(--color-secondary) text-white" : "hover:bg-gray-100/70"}`}
