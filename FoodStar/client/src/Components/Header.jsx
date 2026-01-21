@@ -37,11 +37,11 @@ const Header = () => {
             Contact
           </Link>
         </div>
-        <div>
-          {isLogin ? 
+        <div className="flex gap-4">
+          {isLogin ? (
             <span className="text-red-500">{user.fullName}</span>
-          : 
-            <div>
+          ) : (
+            <>
               <button
                 className="bg-(--color-secondary) py-2  me-5 px-4 font-bold hover:bg-(--color-secondary-hover) hover:text-white rounded "
                 onClick={() => navigate("/login")}
@@ -54,8 +54,8 @@ const Header = () => {
               >
                 Register
               </button>
-            </div>
-          }
+            </>
+          )}
         </div>
       </div>
     </>

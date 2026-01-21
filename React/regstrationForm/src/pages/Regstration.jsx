@@ -89,20 +89,20 @@ const Regstration = () => {
   return (
     <>
       <div className="pt-10 pb-10">
-        <div className=" border-2 border-[#0a9396]  shadow h-auto w-300 rounded-2xl mx-auto">
+        <div className=" border-2 border-[#0a9396]  shadow h-auto w-[90%] rounded-2xl mx-auto">
           <p className="text-5xl font-bold bg-[#f4978e] rounded-2xl py-4 text-[#007ea7] text-center">
             {" "}
             Registration Form
           </p>
         </div>
-        <div className="border-2 pt-5 mt-5 border-[#0a9396] shadow-2xl h-auto w-300 rounded-2xl mx-auto">
+        <div className="border-2 pt-5 mt-5 border-[#0a9396] shadow-2xl h-auto w-[90%] rounded-2xl mx-auto">
           <form onReset={handleClearForm} onSubmit={handleSubmit}>
-            <fieldset className="  border rounded-2xl border-blue-400 w-280 mx-auto">
+            <fieldset className="  border rounded-2xl border-blue-400 w-[90%] mx-auto">
               <legend className="ms-10 text-[#007ea7] font-bold">
                 Personal Information
               </legend>
               <div>
-                <div className=" grid grid-cols-4 pt-3 px-10">
+                <div className=" grid grid-cols-1 gap-2 md:grid-cols-[30%_70%] pt-3 px-10">
                   <label htmlFor="name">Full Name: </label>
                   <input
                     // required
@@ -111,10 +111,10 @@ const Regstration = () => {
                     id="name"
                     onChange={handleChange}
                     value={regstrationData.name}
-                    className="w-200 border  border-[#0a9396] p-1 rounded "
+                    className="w-[100%] border  border-[#0a9396] p-1 rounded "
                   />
                 </div>
-                <div className=" grid grid-cols-4 pt-3 px-10">
+                <div className=" grid grid-cols-1 gap-2 md:grid-cols-[30%_70%] pt-3 px-10">
                   <label htmlFor="email">Email Address :</label>
                   <input
                     // required
@@ -123,10 +123,10 @@ const Regstration = () => {
                     id="email"
                     onChange={handleChange}
                     value={regstrationData.email}
-                    className="w-200 border border-[#0a9396] p-1 rounded "
+                    className="w-[100%] border border-[#0a9396] p-1 rounded "
                   />
                 </div>
-                <div className=" grid grid-cols-4 pt-3 px-10">
+                <div className=" grid grid-cols-1 gap-2 md:grid-cols-[30%_70%] pt-3 px-10">
                   <label htmlFor="number">Mobile Number :</label>
                   <input
                     // required
@@ -135,10 +135,10 @@ const Regstration = () => {
                     id="number"
                     onChange={handleChange}
                     value={regstrationData.number}
-                    className="w-200 border border-[#0a9396] p-1 rounded "
+                    className="w-[100%] border border-[#0a9396] p-1 rounded "
                   />
                 </div>
-                <div className=" grid grid-cols-4 pb-4 pt-3 px-10">
+                <div className=" grid grid-cols-1 gap-2 md:grid-cols-[30%_70%] pb-4 pt-3 px-10">
                   <label htmlFor="dob">Date of Birth :</label>
                   <input
                     // required
@@ -147,22 +147,22 @@ const Regstration = () => {
                     id="dob"
                     onChange={handleChange}
                     value={regstrationData.dob}
-                    className="w-200 border border-[#0a9396] p-1 rounded "
+                    className="w-[100%] border border-[#0a9396] p-1 rounded "
                   />
                 </div>
               </div>
             </fieldset>
 
-            <fieldset className="mt-5 border  rounded-2xl border-blue-400 w-280 mx-auto">
+            <fieldset className="mt-5 border  rounded-2xl border-blue-400 w-[90%] mx-auto">
               <legend className="ms-10  text-[#007ea7] font-bold">
                 Academic Details
               </legend>
               <div>
-                <div className=" grid grid-cols-4 pt-3 px-10">
+                <div className=" grid grid-cols-1 gap-2 md:grid-cols-[30%_70%] pt-3 px-10">
                   <label htmlFor="qualification">Qualifiaction :</label>
                   <select
                     // required
-                    className="w-200 border border-[#0a9396] p-1 rounded "
+                    className="w-[100%] border border-[#0a9396] p-1 rounded "
                     name="qualification"
                     id="qualification"
                     onChange={handleChange}
@@ -175,7 +175,7 @@ const Regstration = () => {
                     <option value="phd"> P.hd</option>
                   </select>
                 </div>
-                <div className=" grid grid-cols-4 pb-4 pt-3 px-10">
+                <div className=" grid grid-cols-1 gap-2 md:grid-cols-[30%_70%] pb-4 pt-3 px-10">
                   <label htmlFor="grade">Percentage / Grade :</label>
                   <input
                     // required
@@ -185,22 +185,22 @@ const Regstration = () => {
                     id="grade"
                     onChange={handleChange}
                     value={regstrationData.grade}
-                    className="w-200 border border-[#0a9396] p-1 rounded "
+                    className="w-[100%] border border-[#0a9396] p-1 rounded "
                   />
                 </div>
               </div>
             </fieldset>
 
-            <fieldset className="mt-5 border rounded-2xl border-blue-400 w-280 mx-auto">
+            <fieldset className="mt-5 border rounded-2xl border-blue-400 w-[90%] mx-auto">
               <legend className="ms-10 text-[#007ea7] font-bold">
                 Course Information
               </legend>
               <div>
-                <div className=" grid grid-cols-4 pt-3 px-10">
+                <div className=" grid grid-cols-1 gap-2 md:grid-cols-[30%_70%] pt-3 px-10">
                   <label htmlFor="course">Available Courses :</label>
                   <select
                     // required
-                    className="w-200 border border-[#0a9396] p-1 rounded "
+                    className="w-[100%] border border-[#0a9396] p-1 rounded "
                     name="course"
                     id="course"
                     onChange={handleChange}
@@ -213,10 +213,11 @@ const Regstration = () => {
                     <option value="DS"> Data Science</option>
                   </select>
                 </div>
-                <div className=" grid grid-cols-4 pb-4 pt-3 px-10">
+                <div className=" grid grid-cols-1 gap-2 md:grid-cols-[30%_70%] pb-4 pt-3 px-10">
                   <label htmlFor="batch">Prefered Batch :</label>
-                  <div className="flex gap-3">
-                    <input
+                  <div className="flex justify-around flex-wrap md:justify-start md:gap-3 ">
+                    <div>
+                      <input
                       type="checkbox"
                       name="batch" 
                       value="morning"
@@ -227,7 +228,9 @@ const Regstration = () => {
                       )}
                     />{" "}
                     Morning
-                    <input
+                    </div>
+                    <div>
+                      <input
                       type="checkbox"
                       name="batch"
                       id="evening"
@@ -239,7 +242,9 @@ const Regstration = () => {
                       )}
                     />{" "}
                     Evening
-                    <input
+                    </div>
+                    <div>
+                      <input
                       type="checkbox"
                       name="batch"
                       id="afternoon"
@@ -251,7 +256,9 @@ const Regstration = () => {
                       )}
                     />{" "}
                     Afternoon
-                    <input
+                    </div>
+                    <div>
+                      <input
                       type="checkbox"
                       name="batch"
                       value="weekends"
@@ -263,28 +270,29 @@ const Regstration = () => {
                       )}
                     />{" "}
                     Weekends
+                    </div>
                   </div>
                 </div>
               </div>
             </fieldset>
 
-            <fieldset className="mt-5 border rounded-2xl border-blue-400 w-280 mx-auto">
+            <fieldset className="mt-5 border rounded-2xl border-blue-400 w-[90%] mx-auto">
               <legend className="ms-10 text-[#007ea7] font-bold">
                 Address
               </legend>
               <div>
-                <div className=" grid grid-cols-4 pt-3 px-10">
+                <div className=" grid grid-cols-1 gap-2 md:grid-cols-[30%_70%] pt-3 px-10">
                   <label htmlFor="address">Residential Address: </label>
                   <textarea
                     // required
-                    className="w-200 border border-[#0a9396] p-1 rounded "
+                    className="w-[100%] border border-[#0a9396] p-1 rounded "
                     name="address"
                     id="address"
                     onChange={handleChange}
                     value={regstrationData.address}
                   ></textarea>
                 </div>
-                <div className=" grid grid-cols-4 pt-3 px-10">
+                <div className=" grid grid-cols-1 gap-2 md:grid-cols-[30%_70%] pt-3 px-10">
                   <label htmlFor="city">City :</label>
                   <input
                     // required
@@ -293,10 +301,10 @@ const Regstration = () => {
                     id="city"
                     onChange={handleChange}
                     value={regstrationData.city}
-                    className="w-200 border border-[#0a9396] p-1 rounded "
+                    className="w-[100%] border border-[#0a9396] p-1 rounded "
                   />
                 </div>
-                <div className=" grid grid-cols-4 pb-4 pt-3 px-10">
+                <div className=" grid grid-cols-1 gap-2 md:grid-cols-[30%_70%] pb-4 pt-3 px-10">
                   <label htmlFor="pin">Pin Code :</label>
                   <input
                     // required
@@ -305,18 +313,18 @@ const Regstration = () => {
                     id="pin"
                     onChange={handleChange}
                     value={regstrationData.pin}
-                    className="w-200 border border-[#0a9396] p-1 rounded "
+                    className="w-[100%] border border-[#0a9396] p-1 rounded "
                   />
                 </div>
               </div>
             </fieldset>
 
-            <fieldset className="mt-5 border rounded-2xl border-blue-400 w-280 mx-auto">
+            <fieldset className="mt-5 border rounded-2xl border-blue-400 w-[90%] mx-auto">
               <legend className="ms-10 text-[#007ea7] font-bold">
                 Guardian Details
               </legend>
               <div>
-                <div className=" grid grid-cols-4 pt-3 px-10">
+                <div className=" grid grid-cols-1 gap-2 md:grid-cols-[30%_70%] pt-3 px-10">
                   <label htmlFor="parentname">Guardian’s Full Name: </label>
                   <input
                     // required
@@ -325,11 +333,11 @@ const Regstration = () => {
                     id="parentname"
                     onChange={handleChange}
                     value={regstrationData.parentname}
-                    className="w-200 border border-[#0a9396] p-1 rounded "
+                    className="w-[100%] border border-[#0a9396] p-1 rounded "
                   />
                 </div>
 
-                <div className=" grid grid-cols-4 pb-4 pt-3 px-10">
+                <div className=" grid grid-cols-1 gap-2 md:grid-cols-[30%_70%] pb-4 pt-3 px-10">
                   <label htmlFor="parentnumber">
                     Guardian’s Contact Number :
                   </label>
@@ -340,90 +348,101 @@ const Regstration = () => {
                     id="parentnumber"
                     onChange={handleChange}
                     value={regstrationData.parentnumber}
-                    className="w-200 border border-[#0a9396] p-1 rounded "
+                    className="w-[100%] border border-[#0a9396] p-1 rounded "
                   />
                 </div>
               </div>
             </fieldset>
 
-            <fieldset className="mt-5 border rounded-2xl border-blue-400 w-280 mx-auto">
+            <fieldset className="mt-5 border rounded-2xl border-blue-400 w-[90%] mx-auto">
               <legend className="ms-10 text-[#007ea7] font-bold">
                 Additional Information
               </legend>
               <div>
-                <div className="flex  pb-4 pt-3 px-10 gap-15">
+                <div className="  grid grid-cols-1 gap-2 md:grid-cols-[30%_70%] pb-4 pt-3 px-10 gap-15">
                   <label htmlFor="adds">How did you hear about us? :</label>
 
-                  <div className="flex gap-3">
-                    <input
+                  <div className="flex justify-around w-[90%] text-wrap  gap-1 flex-wrap">
+                    <div className="flex gap-2 items-center">
+                      <input
                       type="checkbox"
                       name="adds"
                       id="friend"
-                      value={friend}
+                      value="friend"
                       onChange={handleChange}
                       checked={Object.values(regstrationData.adds).includes(
                         "friend"
                       )}
                     />
                     Friends
-                    <input
+                    </div>
+                    
+                   <div>
+                     <input
                       type="checkbox"
                       name="adds"
                       id="onlinead"
-                      value={onlinead}
-                      className="ms-8"
+                      value="onlinead"
+                      className=""
                       onChange={handleChange}
                       checked={Object.values(regstrationData.adds).includes(
                         "onlinead"
                       )}
                     />
                     Online Ad
-                    <input
+                   </div>
+                   <div>
+                     <input
                       type="checkbox"
                       name="adds"
                       id="newspaper"
-                      value={newspaper}
-                      className="ms-8"
+                      value="newspaper"
+                      className=""
                       onChange={handleChange}
                       checked={Object.values(regstrationData.adds).includes(
                         "newspaper"
                       )}
                     />{" "}
                     NewsPaper
-                    <input
+                   </div>
+                    <div className="flex gap-2 items-center">
+                      <input
                       type="checkbox"
                       name="adds"
                       id="media"
-                      value={media}
-                      className="ms-8"
+                      value="media"
+                      className=""
                       onChange={handleChange}
                       checked={Object.values(regstrationData.adds).includes(
                         "media"
                       )}
                     />{" "}
                     Social Media
-                    <input
+                    </div>
+                    <div className="flex gap-2 items-center">
+                      <input
                       type="checkbox"
                       name="adds"
                       id="other"
-                      value={other}
-                      className="ms-8"
+                      value="other"
+                      className=""
                       onChange={handleChange}
                       checked={Object.values(regstrationData.adds).includes(
                         "other"
                       )}
-                    />{" "}
+                    />
                     Other
+                    </div>
                   </div>
                 </div>
 
-                <div className=" grid grid-cols-4 pb-4 pt-3 px-10">
+                <div className=" grid grid-cols-1 gap-2 md:grid-cols-[30%_70%] pb-4 pt-3 px-10">
                   <label htmlFor="message">
                     Special Requirement(optional){" "}
                   </label>
                   <textarea
                     // required
-                    className="w-200 border border-[#0a9396] p-1 rounded "
+                    className="w-[100%] border border-[#0a9396] p-1 rounded "
                     name="message"
                     id="message"
                     onChange={handleChange}
