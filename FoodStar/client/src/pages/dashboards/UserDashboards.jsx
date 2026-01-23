@@ -23,11 +23,11 @@ const UserDashboards = () => {
           />
         </div>
         <div className="border border-amber-700 duration-400 grow">
-          {active === "overview" && <UserOverview />}
-          {active === "profile" && <UserProfile />}
-          {active === "order" && <UserOrder />}
-          {active === "transaction" && <UserTransaction />}
-          {active === "helpdesk" && <UserHelpDesk />}
+          {active === "overview" && <UserOverview/>}
+          {active === "profile" && <UserProfile/>}
+          {active === "order" && <UserOrder/>}
+          {active === "transaction" && <UserTransaction/>}
+          {active === "helpdesk" && <UserHelpDesk/>}
         </div>
       </div>
     </>
