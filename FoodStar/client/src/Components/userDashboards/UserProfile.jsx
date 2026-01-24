@@ -8,26 +8,16 @@ const UserProfile = () => {
   const { user } = useAuth();
   return (
     <>
-      <div className="flex-col-2 gap-10 p-5 justify-center text-center items-center">
-        <div className=" pt-5">
-          <span>Name :</span>
-          <span> {user.fullName}</span>
+      <div className=" flex ">
+        <div className=" h-10 w-10 rounded-full">
+          {user.fullName.charAt(0)}
         </div>
-        <div className=" pt-5">
-          <span>Email :</span>
-          <span> {user.email}</span>
+        <div>
+          <p> {user.fullName} </p>
+           <p> {user.email} </p>
+            <p> {user.mobileNumber} </p>
         </div>
-        <div className=" pt-5">
-          <span>Phone :</span>
-          <span> {user.mobileNumber}</span>
-        </div>
-        <button
-          className="border px-5 py-2 mt-5 bg-amber-500 text-amber-100 hover:scale-105 hover:cursor-pointer rounded-xl "
-          onClick={() => setIsEditProfileModalOpen(true)}
-        >
-          {" "}
-          Edit Profile
-        </button>
+        <button  onClick={() => setIsEditProfileModalOpen(true)} className=" px-6 py-2 text-white bg-blue-500 ml-auto">Edit</button>
       </div>
 
       {isEditProfileModalOpen && (
