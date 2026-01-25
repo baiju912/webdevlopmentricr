@@ -6,7 +6,7 @@ import { useAuth } from "../context/AuthContext";
 
 const Login = () => {
 
-  const {setUser, setIsLogin} = useAuth();
+  const {setUser, setIsLogin, setRole} = useAuth();
 
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -63,7 +63,35 @@ const Login = () => {
       setIsLogin(true);
       sessionStorage.setItem("CravingUser", JSON.stringify(res.data.data))
       handleClearForm();
-      navigate("/user-dashboards")
+      switch (res.data.data.role) {
+        case "manager":{
+          setRole("manager")
+          navigate("/resturent-dashboards");
+          break;
+        }
+
+        case "partner":{
+          setRole("partner")
+          navigate("/rider-dashboards");
+          break;
+        }
+
+        case "customer":{
+          setRole("customer")
+          navigate("/user-dashboards");
+          break;
+        }
+        case "admin":{
+          setRole("admin")
+          navigate("/admin-dashboards");
+          break;
+        }
+          
+        default:
+          break;
+      }
+      navigate("/user-dashboards");
+
     } catch (error) {
       console.log(error);
       toast.error(error.message);

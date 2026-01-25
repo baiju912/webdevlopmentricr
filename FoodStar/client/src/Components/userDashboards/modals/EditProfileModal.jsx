@@ -3,27 +3,32 @@ import Lottie from "lottie-react";
 import EditProf from "../../../assets/animations/EditLogo.json";
 import { motion } from "motion/react";
 import { useAuth } from "../../../context/AuthContext";
+import api from "../../../config/Api";
 
 const EditProfileModal = ({ onClose }) => {
-  const { user } = useAuth();
-
-  const [data, setData] = useState({
+  const { user, setUser , setIsLogin} = useAuth();
+  const [formData, SetFormData] = useState({
     fullName: user.fullName,
     email: user.email,
     mobileNumber: user.mobileNumber,
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setData((prev) => ({ ...prev, [name]: value }));
-  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("Form Submitted");
+    console.log(formData);
 
-  try {
-    const res =  applyAxisDelta.put("/user/update", data)
-    
-  } catch (error) {
-    
-  }
+    try {
+      const res = await api.put("/user/update", formData);
+      sessionStorage.setItem("CravingUser", JSON.stringify(res.data.data));
+      setUser(res.data.data);
+      setIsLogin(true);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      onClose();
+    }
+  };
   return (
     <>
       <div className="fixed inset-0 bg-black/70 flex justify-center p-7 items-center w-full">
@@ -37,51 +42,56 @@ const EditProfileModal = ({ onClose }) => {
             Edit Profile
           </div>
 
-          <div className=" flex  justify-center items-center">
-            <div className="grid-cols-1 text-center pb-10 ">
-              <input
-                type="text"
-                name="fullName"
-                placeholder="Full Name"
-                value={data.fullName}
-                onChange={handleChange}
-                className="w-[80%]  mt-8 h-fit px-4 py-3 disabled:bg-gray-200 disabled:cursor-not-allowed border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
-              />
+          <form onSubmit={handleSubmit}>
+            <div className=" flex  justify-center items-center">
+              <div className="grid-cols-1 text-center pb-10 ">
+                <input
+                  type="text"
+                  name="fullName"
+                  placeholder="Full Name"
+                  value={formData.fullName}
+                  onChange={(e) =>
+                    SetFormData({ ...formData, fullName: e.target.value })
+                  }
+                  className="w-[80%]  mt-8 h-fit px-4 py-3 disabled:bg-gray-200 disabled:cursor-not-allowed border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
+                />
 
-              <input
-                type="email"
-                name="email"
-                placeholder=" Email Id"
-                value={data.email}
-                onChange={handleChange}
-                disabled
-                className="w-[80%] mx-auto mt-8 h-fit px-4 py-3 disabled:bg-gray-200 disabled:cursor-not-allowed border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
-              />
-              <input
-                type="number"
-                name="mobileNumber"
-                placeholder=" Mobile No"
-                value={data.mobileNumber}
-                onChange={handleChange}
-                className="w-[80%] mx-auto mt-8 h-fit px-4 py-3 disabled:bg-gray-200 disabled:cursor-not-allowed border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
-              />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder=" Email Id"
+                  value={formData.email}
+                  onChange={(e) =>
+                    SetFormData({ ...formData, email: e.target.value })
+                  }
+                  disabled
+                  className="w-[80%] mx-auto mt-8 h-fit px-4 py-3 disabled:bg-gray-200 disabled:cursor-not-allowed border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
+                />
+                <input
+                  type="number"
+                  name="mobileNumber"
+                  placeholder=" Mobile No"
+                  value={formData.mobileNumber}
+                  onChange={(e) =>
+                    SetFormData({ ...formData, mobileNumber: e.target.value })
+                  }
+                  className="w-[80%] mx-auto mt-8 h-fit px-4 py-3 disabled:bg-gray-200 disabled:cursor-not-allowed border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
+                />
+              </div>
             </div>
-          </div>
 
-          <motion.div
-            
-            className="text-center flex justify-center"
-          >
-            <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-              onClick={() => onClose()}
-              className="px-6  text-center rounded-xl bg-green-800 text-white hover:cursor-pointer  text-2xl py-2"
-            >
-              {" "}
-              Update{" "}
-            </motion.button>
-          </motion.div>
+            <div className="text-center flex justify-center">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                type="submit"
+                className="px-6  text-center rounded-xl bg-green-800 text-white hover:cursor-pointer  text-2xl py-2"
+              >
+                {" "}
+                Update{" "}
+              </motion.button>
+            </div>
+          </form>
           <button
             onClick={() => onClose()}
             className="w-10 aspect-square rounded-full bg-red-500 text-white text-lg font-extrabold hover:bg-red-700 cursor-pointer absolute right-5 top-5"

@@ -19,8 +19,132 @@ const userSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    role: {
+      type: String,
+      enum: ["admin", "manager", "partner", "customer"],
+      required: true,
+      default: "customer",
+    },
+    dob: {
+      type: String,
+      required: true,
+      default: "N/A",
+    },
+    gender: {
+      type: String,
+      enum: ["male", "female", "other", "N/A"],
+      required: true,
+      default: "N/A",
+    },
+
+    address: {
+      type: String,
+      required: true,
+      default: "N/A",
+    },
+
+    city: {
+      type: String,
+      required: true,
+      default: "N/A",
+    },
+    pin: {
+      type: String,
+      required: true,
+      default: "N/A",
+    },
+    photo: {
+      url: {
+        type: String,
+        default: "",
+      },
+      publicId: {
+        type: String,
+        default: "",
+      },
+    },
+    Geolocation: {
+      lat: {
+        type: String,
+        required: true,
+        default: "N/A",
+      },
+      lon: {
+        type: String,
+        required: true,
+        default: "N/A",
+      },
+    },
+    paymentsDetails: {
+      upi: {
+        type: String,
+        required: true,
+        default: "N/A",
+      },
+      account_number: {
+        type: String,
+        required: true,
+        default: "N/A",
+      },
+      ifs_Code: {
+        type: String,
+        required: true,
+        default: "N/A",
+      },
+    },
+    restaurantName: {
+      type: String,
+      required() {
+        this.role === "manager" ? true : false;
+      },
+      default() {
+        return this.role === "manager" ? "N/A" : null;
+      },
+    },
+    cuisine: {
+      type: String,
+      required() {
+        this.role === "manager" ? true : false;
+      },
+      default() {
+        return this.role === "manager" ? "N/A" : null;
+      },
+    },
+
+    docoments: {
+      gst: {
+        type: String,
+        required: true,
+        default: "N/A",
+      },
+      fssai: {
+        type: String,
+        required: true,
+        default: "N/A",
+      },
+      rc: {
+        type: String,
+        required: true,
+        default: "N/A",
+      },
+      dl: {
+        type: String,
+        required: true,
+        default: "N/A",
+      },
+      uidia: {
+        type: String,
+        required: true,
+        default: "N/A",
+      },
+      pan: {
+        type: String,
+        required: true,
+        default: "N/A",
+      },
+    },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 const User = mongoose.model("User", userSchema);
