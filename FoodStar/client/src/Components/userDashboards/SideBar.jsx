@@ -6,61 +6,75 @@ import { TbTransactionRupee } from "react-icons/tb";
 import { TfiHeadphoneAlt } from "react-icons/tfi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
+import { IoLogOut } from "react-icons/io5";
 
 const SideBar = ({ active, setActive, show, setShow }) => {
   return (
     <>
       <div className="p-2">
-        <div className="flex gap-4 h-10 items-center mb-2 font-bold">
-          <button onClick={() => setShow(!show)}>
-            {show ? (
-              <IoCloseSharp className=" hover:cursor-pointer ms-4  text-2xl" />
-            ) : (
-              <GiHamburgerMenu className=" hover:cursor-pointer ms-4 text-2xl" />
-            )}{" "}
-          </button>
-          <div className="text-xl overflow-hidden text-nowrap text-center font-bold">
-            {" "}
-            {show && "User Dashboard"}
+        <div>
+          <div className="flex gap-4 h-10 items-center mb-2 font-bold">
+            <button onClick={() => setShow(!show)}>
+              {show ? (
+                <IoCloseSharp className=" hover:cursor-pointer ms-4  text-2xl" />
+              ) : (
+                <GiHamburgerMenu className=" hover:cursor-pointer ms-4 text-2xl" />
+              )}{" "}
+            </button>
+            <div className="text-xl overflow-hidden text-nowrap text-center font-bold">
+              {" "}
+              {show && "User Dashboard"}
+            </div>
+          </div>
+          <hr />
+          <div className="grid gap-3 p-3">
+            <button
+              className={`flex gap-3 items-center p-3 h-10 text-nowrap overflow-hidden rounded-xl hover:cursor-pointer hover:scale-110 ${active === "overview" ? "bg-(--color-secondary) text-white" : "hover:bg-gray-100/70"}`}
+              onClick={() => setActive("overview")}
+            >
+              <TbChartTreemap /> {show && "Overview"}
+            </button>
+            <button
+              className={`flex gap-3 items-center p-3  h-10 rounded-xl text-nowrap overflow-hidden hover:cursor-pointer hover:scale-110 ${active === "profile" ? "bg-(--color-secondary) text-white" : "hover:bg-gray-100/70"}`}
+              onClick={() => setActive("profile")}
+            >
+              {" "}
+              <ImProfile />
+              {show && "Profile"}
+            </button>
+            <button
+              className={`flex gap-3 items-center p-3 h-10 rounded-xl text-nowrap overflow-hidden hover:cursor-pointer hover:scale-110 ${active === "order" ? "bg-(--color-secondary) text-white" : "hover:bg-gray-100/70"}`}
+              onClick={() => setActive("order")}
+            >
+              <FaShoppingCart />
+              {show && "Orders"}
+            </button>
+            <button
+              className={`flex gap-3 items-center p-3 h-10 rounded-xl text-nowrap overflow-hidden hover:cursor-pointer hover:scale-110 ${active === "transaction" ? "bg-(--color-secondary) text-white" : "hover:bg-gray-100/70"}`}
+              onClick={() => setActive("transaction")}
+            >
+              <TbTransactionRupee />
+              {show && "Transaction"}
+            </button>
+            <button
+              className={`flex gap-3 items-center p-3 h-10 rounded-xl text-nowrap overflow-hidden hover:cursor-pointer hover:scale-110 ${active === "helpdesk" ? "bg-(--color-secondary) text-white" : "hover:bg-gray-100/70"}`}
+              onClick={() => setActive("helpdesk")}
+            >
+              {" "}
+              <TfiHeadphoneAlt />
+              {show && "Help Desk"}
+            </button>
           </div>
         </div>
-        <hr />
-        <div className="grid gap-3 p-3">
+
+        <div>
           <button
-            className={`flex gap-3 items-center p-3 h-10 text-nowrap overflow-hidden rounded-xl hover:cursor-pointer hover:scale-110 ${active === "overview" ? "bg-(--color-secondary) text-white" : "hover:bg-gray-100/70"}`}
-            onClick={() => setActive("overview")}
-          >
-            <TbChartTreemap /> {show && "Overview"}
-          </button>
-          <button
-            className={`flex gap-3 items-center p-3  h-10 rounded-xl text-nowrap overflow-hidden hover:cursor-pointer hover:scale-110 ${active === "profile" ? "bg-(--color-secondary) text-white" : "hover:bg-gray-100/70"}`}
-            onClick={() => setActive("profile")}
+            className={`flex gap-3 items-center w-full p-3 h-10 rounded-xl text-nowrap overflow-hidden hover:cursor-pointer hover:scale-110 ${active === "logout" ? "bg-(--color-secondary) text-white" : "hover:bg-gray-100/70"}`}
+            onClick={() => console.log("Logout")}
           >
             {" "}
-            <ImProfile />
-            {show && "Profile"}
-          </button>
-          <button
-            className={`flex gap-3 items-center p-3 h-10 rounded-xl text-nowrap overflow-hidden hover:cursor-pointer hover:scale-110 ${active === "order" ? "bg-(--color-secondary) text-white" : "hover:bg-gray-100/70"}`}
-            onClick={() => setActive("order")}
-          >
-            <FaShoppingCart />
-            {show && "Orders"}
-          </button>
-          <button
-            className={`flex gap-3 items-center p-3 h-10 rounded-xl text-nowrap overflow-hidden hover:cursor-pointer hover:scale-110 ${active === "transaction" ? "bg-(--color-secondary) text-white" : "hover:bg-gray-100/70"}`}
-            onClick={() => setActive("transaction")}
-          >
-            <TbTransactionRupee />
-            {show && "Transaction"}
-          </button>
-          <button
-            className={`flex gap-3 items-center p-3 h-10 rounded-xl text-nowrap overflow-hidden hover:cursor-pointer hover:scale-110 ${active === "helpdesk" ? "bg-(--color-secondary) text-white" : "hover:bg-gray-100/70"}`}
-            onClick={() => setActive("helpdesk")}
-          >
-            {" "}
-            <TfiHeadphoneAlt />
-            {show && "Help Desk"}
+            <IoLogOut />
+            {show && "Logout"}
           </button>
         </div>
       </div>

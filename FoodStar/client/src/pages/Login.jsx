@@ -66,35 +66,35 @@ const Login = () => {
       switch (res.data.data.role) {
         case "manager":{
           setRole("manager")
-          navigate("/resturent-dashboards");
+          navigate("/resturent-dashboard");
           break;
         }
 
         case "partner":{
           setRole("partner")
-          navigate("/rider-dashboards");
+          navigate("/rider-dashboard");
           break;
         }
 
         case "customer":{
           setRole("customer")
-          navigate("/user-dashboards");
+          navigate("/user-dashboard");
           break;
         }
         case "admin":{
           setRole("admin")
-          navigate("/admin-dashboards");
+          navigate("/admin-dashboard");
           break;
         }
           
         default:
           break;
       }
-      navigate("/user-dashboards");
+      
 
     } catch (error) {
       console.log(error);
-      toast.error(error.message);
+      toast.error(error?.response?.data?.message || "Unknown Error");
     } finally {
       setIsLoading(false);
     }

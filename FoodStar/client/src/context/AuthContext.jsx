@@ -11,9 +11,10 @@ export const AuthProvider = (props) => {
 
   useEffect(() => {
     setIsLogin(!!user);
+     setRole(user?.role || "");
   }, [user]);
 
-  const value = { user, setUser, isLogin, setIsLogin };
+  const value = { user, setUser, isLogin, setIsLogin , role, setRole};
   console.log(value);
   
 

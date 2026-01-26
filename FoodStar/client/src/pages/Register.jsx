@@ -11,7 +11,7 @@ const Register = () => {
     mobileNumber: "",
     password: "",
     confirmPassword: "",
-    role:"",
+    role: "",
   });
   const [isLoading, setIsLoading] = useState(false);
   const [validationError, setValidationError] = useState({});
@@ -28,7 +28,7 @@ const Register = () => {
       mobileNumber: "",
       password: "",
       confirmPassword: "",
-      role:"",
+      role: "",
     });
   };
 
@@ -56,7 +56,7 @@ const Register = () => {
     }
 
     if (!formData.role) {
-        setValidationError(Error);
+      Error.role = "Please choose any one ";
     }
 
     setValidationError(Error);
@@ -112,48 +112,48 @@ const Register = () => {
               {/* Personal Information */}
               <div className="mb-10">
                 <div className="space-y-4">
-                  <div className="flex items-center gap-5">
-                    <span>I am </span>
-                    <div className="flex items-center  gap-8 justify-around">
-                    <div className="flex items-center gap-2">
-                      <input
-                        type="radio"
-                        name="role"
-                        id="manager"
-                        checked={formData.role === "manager"}
-                        value={"manager"}
-                        onChange={handleChange}
-                      />
-                      <label htmlFor="manager">Resturant Manager</label>
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <label>I am </label>
+                      <div className="flex items-center gap-2">
+                        <input
+                          type="radio"
+                          name="role"
+                          id="manager"
+                          checked={formData.role === "manager"}
+                          value={"manager"}
+                          onChange={handleChange}
+                        />
+                        <label htmlFor="manager">Resturant Manager</label>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <input
+                          type="radio"
+                          name="role"
+                          id="partner"
+                          checked={formData.role === "partner"}
+                          value={"partner"}
+                          onChange={handleChange}
+                        />
+                        <label htmlFor="partner">Delivery Partner</label>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <input
+                          type="radio"
+                          name="role"
+                          id="customer"
+                          checked={formData.role === "customer"}
+                          value={"customer"}
+                          onChange={handleChange}
+                        />
+                        <label htmlFor="customer">Customer</label>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <input
-                        type="radio"
-                        name="role"
-                        id="partner"
-                        checked={formData.role === "partner"}
-                        value={"partner"}
-                        onChange={handleChange}
-                      />
-                      <label htmlFor="manager">Delivery Partner</label>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <input
-                        type="radio"
-                        name="role"
-                        id="customer"
-                        checked={formData.role === "customer"}
-                        value={"customer"}
-                        onChange={handleChange}
-                      />
-                      <label htmlFor="manager">Customer</label>
-                      {validationError.role && (
+                    {validationError.role && (
                       <span className="text-xs text-red-500">
                         {validationError.role}
                       </span>
                     )}
-                    </div>
-                  </div>
                   </div>
                   <div>
                     <input

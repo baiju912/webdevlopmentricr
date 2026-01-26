@@ -7,10 +7,10 @@ export const UserRegister = async (req, res, next) => {
     console.log(req.body);
     
     // Accept data form Fronted
-    const { fullName, email, mobileNumber, password } = req.body;
+    const { fullName, email, mobileNumber, password, role } = req.body;
 
     // Verify that all data exits
-    if (!fullName || !email || !mobileNumber || !password) {
+    if (!fullName || !email || !mobileNumber || !password ||!role) {
       const error = new Error("All feilds required");
       error.statusCode = 400;
       return next(error);
@@ -40,6 +40,7 @@ export const UserRegister = async (req, res, next) => {
       email,
       mobileNumber,
       password: hashPassword,
+      role,
     });
 
     // Send response to  frontend

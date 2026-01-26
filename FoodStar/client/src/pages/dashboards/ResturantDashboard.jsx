@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const ResturantDashboard = () => {
-  return (
-    <div>ResturantDashboard</div>
-  )
-}
+  return <div>ResturantDashboard</div>;
+};
 
-export default ResturantDashboard
+export default ResturantDashboard;
