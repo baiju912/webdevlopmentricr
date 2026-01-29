@@ -33,14 +33,19 @@ export const UserRegister = async (req, res, next) => {
     const hashPassword = await bcrypt.hash(password, salt);
 
     console.log("password hashing done = ",hashPassword );
-    
+
+    const  photoURL = `https://placehold.co/600x400?text=${fullName.charAt(0).toUpperCase()}`;
+    const photo = {
+      url: photoURL,
+    };
     // Save data to database
     const newUser = await User.create({
       fullName,
-      email,
+      email: email.toLowerCase(),
       mobileNumber,
       password: hashPassword,
       role,
+      photo,
     });
 
     // Send response to  frontend

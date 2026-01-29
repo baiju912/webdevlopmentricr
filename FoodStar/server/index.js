@@ -2,9 +2,10 @@
 
 import express from "express";
 import cors from "cors";
-import cookieParser from "cookie-parser";
+
 import morgan from "morgan";
 import cloudinary from "./src/config/Cloundinary.js";
+import cookieParser from "cookie-parser";
 import connectDB from "./src/config/db.js";
 import AuthRouter from "./src/routes/authRouter.js";
 import PublicRouter from "./src/routes/publicRouter.js";

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import api from "../config/Api";
-import { useNavigate } from "react-router-dom";
+
 
 const Register = () => {
-  const navigate = useNavigate();
+  
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -82,7 +82,7 @@ const Register = () => {
       handleClearForm();
     } catch (error) {
       console.log(error);
-      toast.error(error.message);
+      toast.error(error?.response?.data?.message.message || "Unknown Error");
     } finally {
       setIsLoading(false);
     }
