@@ -85,7 +85,8 @@ const EditProfileModal = ({ onClose }) => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 type="submit"
-                className="px-6  text-center rounded-xl bg-green-800 text-white hover:cursor-pointer  text-2xl py-2"
+                className="px-6  text-center rounded-xl bg-green-800 text-white hover:cursor-pointer  text-2xl py-2" 
+                onClick={ <EditProfileModal/>}
               >
                 {" "}
                 Update{" "}

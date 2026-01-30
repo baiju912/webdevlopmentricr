@@ -62,8 +62,8 @@ export const UserChangePhoto = async (req, res, next) => {
 
     console.log("DP:", dp);
 
-    if (currentUser.photo.publicID) {
-      await cloudinary.uploader.destroy(currentUser.photo.publicID);
+    if (currentUser.photo.publicId) {
+      await cloudinary.uploader.destroy(currentUser.photo.publicId);
     }
 
     const b64 = Buffer.from(dp.buffer).toString("base64");
@@ -80,7 +80,7 @@ export const UserChangePhoto = async (req, res, next) => {
 
     console.log("Image Uplaoded successfully: ", result);
     currentUser.photo.url = result.secure_url;
-    currentUser.photo.publicID = result.public_id;
+    currentUser.photo.publicId = result.public_id;
 
     await currentUser.save();
 
