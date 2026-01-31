@@ -32,7 +32,7 @@ const userSchema = mongoose.Schema(
     },
     gender: {
       type: String,
-      enum: ["male", "female", "other", "N/A"],
+      enum: ["Male", "Female", "Other", "N/A"],
       required: true,
       default: "N/A",
     },
@@ -142,6 +142,12 @@ const userSchema = mongoose.Schema(
         required: true,
         default: "N/A",
       },
+    },
+    isActive: {
+      type: String,
+      enum: ["active", "inactive", "blocked"],
+      required: true,
+      default: "active",
     },
   },
   { timestamps: true },

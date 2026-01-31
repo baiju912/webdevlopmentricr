@@ -10,9 +10,11 @@ import { IoLogOut } from "react-icons/io5";
 import api from "../../config/Api";
 import toast from "react-hot-toast";
 import { useAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const SideBar = ({ active, setActive, show, setShow }) => {
   const { setUser, setIsLogin } = useAuth();
+  const navigate = useNavigate();
 
   const menuItems = [
     { key: "overview", title: "overView", icon: <TbChartTreemap /> },
@@ -32,6 +34,7 @@ const SideBar = ({ active, setActive, show, setShow }) => {
       setUser("");
       setIsLogin(false);
       sessionStorage.removeItem("CravingUser");
+      navigate("/login");
     } catch (error) {
       toast.error(error?.response?.data?.message || "Unknown Error");
     }

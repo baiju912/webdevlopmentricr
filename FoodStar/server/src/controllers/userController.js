@@ -3,42 +3,50 @@ import User from "../models/userModels.js";
 
 export const UserUpdate = async (req, res, next) => {
   try {
-    const { fullName, email, mobileNumber } = req.body;
+    const { fullName, email, mobileNumber, gender, dob, address, city, pin, documents, paymentDetails, geoLocation } = req.body;
     const currentUser = req.user;
     
 
-    if (!fullName || !email || !mobileNumber) {
+    if ( !fullName || !email || !mobileNumber || !gender || !dob || !address || !city || !pin || !documents || !paymentDetails || !geoLocation ) {
       const error = new Error("All Fields Required");
       error.statusCode = 400;
       return next(error);
     }
     console.log("oldData: ", currentUser); // old user data in JSON format
     //First Way
-    //  currentUser.fullName = fullName;
-    //  currentUser.email = email;
-    //  currentUser.mobileNumber = mobileNumber;
+     currentUser.fullName = fullName;
+     currentUser.email = email;
+     currentUser.mobileNumber = mobileNumber;
+     currentUser.gender = gender;
+     currentUser.dob = dob;
+     currentUser.address = address;
+     currentUser.city = city;
+     currentUser.pin = pin;
+     currentUser.documents = documents;
+     currentUser.paymentDetails = paymentDetails;
+     currentUser.geoLocation = geoLocation;
 
-    //  await currentUser.save();
+     await currentUser.save();
 
-    //  console.log("NewData : ", currentUser);
+     console.log("NewData : ", currentUser);
 
     // Second Way
 
-    const updateUser = await User.findByIdAndUpdate(
-      { _id: currentUser._id },
-      {
-        fullName,
-        email,
-        mobileNumber,
-      },
-      { new: true },
-    );
+    // const updateUser = await User.findByIdAndUpdate(
+    //   { _id: currentUser._id },
+    //   {
+    //     fullName,
+    //     email,
+    //     mobileNumber,
+    //   },
+    //   { new: true },
+    // );
 
-    console.log("Update User : ", updateUser);
+    // console.log("Update User : ", updateUser);
 
     res
       .status(200)
-      .json({ message: "User Updated Sucessfully ", data: updateUser });
+      .json({ message: "User Updated Sucessfully ", data: currentUser });
 
     console.log("Updating the user");
   } catch (error) {
