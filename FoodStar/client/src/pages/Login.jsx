@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import api from "../config/Api";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import ForgetPasswordModal from "../Components/publicModals/ForgetPasswordModal";
 
 const Login = () => {
   const { setUser, setIsLogin, setRole } = useAuth();
@@ -146,14 +147,16 @@ const Login = () => {
                   />
                 </div>
 
-                <div
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setIsForgetPasswordModalOpen(true);
-                  }}
-                  className="flex justify-end hover:cursor-pointer hover:text-orange-400"
-                >
-                  Forget Password?
+                <div className="w-full flex justify-end">
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsForgetPasswordModalOpen(true);
+                    }}
+                    className="text-(--color-primary) hover:text-(--color-secondary) cursor-pointer"
+                  >
+                    Forget Password?
+                  </button>
                 </div>
               </div>
 
@@ -193,7 +196,11 @@ const Login = () => {
         </div>
       </div>
 
-      {isForgetPasswordModalOpen && ForgetPasswordModal()}
+      {isForgetPasswordModalOpen && (
+        <ForgetPasswordModal
+          onClose={() => setIsForgetPasswordModalOpen(false)}
+        />
+      )}
     </>
   );
 };
