@@ -7,12 +7,13 @@ import { TfiHeadphoneAlt, TfiShoppingCart } from "react-icons/tfi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 import { IoLogOut } from "react-icons/io5";
+import { MdOutlineMenuBook } from "react-icons/md";
 import api from "../../config/Api";
 import toast from "react-hot-toast";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
-const SideBar = ({ active, setActive, show, setShow }) => {
+const ResturantSideBar = ({ active, setActive, show, setShow }) => {
   const { setUser, setIsLogin } = useAuth();
   const navigate = useNavigate();
 
@@ -25,7 +26,7 @@ const SideBar = ({ active, setActive, show, setShow }) => {
       title: "transactions",
       icon: <TbTransactionRupee />,
     },
-    { key: "helpdesk", title: "helpdesk", icon: <TfiHeadphoneAlt /> },
+    { key: "helpdesk", title: "helpdesk", icon: <MdOutlineMenuBook /> },
   ];
   const handleLogout = async () => {
     try {
@@ -54,7 +55,7 @@ const SideBar = ({ active, setActive, show, setShow }) => {
             </button>
             <div className="text-xl overflow-hidden text-nowrap text-center font-bold">
               {" "}
-              {show && "User Dashboard"}
+              {show && "Resturant Dashboard"}
             </div>
           </div>
           <hr />
@@ -89,11 +90,11 @@ const SideBar = ({ active, setActive, show, setShow }) => {
             </button>
             <button
               className={`flex gap-3 items-center p-3 h-10 rounded-xl text-nowrap overflow-hidden hover:cursor-pointer hover:scale-110 ${active === "helpdesk" ? "bg-(--color-secondary) text-white" : "hover:bg-gray-100/70"}`}
-              onClick={() => setActive("helpdesk")}
+              onClick={() => setActive("menu")}
             >
               {" "}
-              <TfiHeadphoneAlt />
-              {show && "Help Desk"}
+              <MdOutlineMenuBook />
+              {show && "Menu Control"}
             </button>
           </div>
         </div>
@@ -115,5 +116,6 @@ const SideBar = ({ active, setActive, show, setShow }) => {
   );
 };
 
-export default SideBar;
-                        
+
+
+export default ResturantSideBar;

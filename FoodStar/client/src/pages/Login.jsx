@@ -5,10 +5,13 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 const Login = () => {
-
-  const {setUser, setIsLogin, setRole} = useAuth();
+  const { setUser, setIsLogin, setRole } = useAuth();
 
   const navigate = useNavigate();
+
+  const [isForgetPasswordModalOpen, setIsForgetPasswordModalOpen] =
+    useState(false);
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -33,7 +36,7 @@ const Login = () => {
 
     if (
       !/^[\w\.]+@(gmail|outlook|ricr|yahoo)\.(com|in|co.in)$/.test(
-        formData.email
+        formData.email,
       )
     ) {
       Error.email = "Use Proper Email Format";
@@ -61,37 +64,35 @@ const Login = () => {
       toast.success(res.data.message);
       setUser(res.data.data);
       setIsLogin(true);
-      sessionStorage.setItem("CravingUser", JSON.stringify(res.data.data))
+      sessionStorage.setItem("CravingUser", JSON.stringify(res.data.data));
       handleClearForm();
       switch (res.data.data.role) {
-        case "manager":{
-          setRole("manager")
+        case "manager": {
+          setRole("manager");
           navigate("/resturent-dashboard");
           break;
         }
 
-        case "partner":{
-          setRole("partner")
+        case "partner": {
+          setRole("partner");
           navigate("/rider-dashboard");
           break;
         }
 
-        case "customer":{
-          setRole("customer")
+        case "customer": {
+          setRole("customer");
           navigate("/user-dashboard");
           break;
         }
-        case "admin":{
-          setRole("admin")
+        case "admin": {
+          setRole("admin");
           navigate("/admin-dashboard");
           break;
         }
-          
+
         default:
           break;
       }
-      
-
     } catch (error) {
       console.log(error);
       toast.error(error?.response?.data?.message || "Unknown Error");
@@ -120,7 +121,7 @@ const Login = () => {
               className="p-8"
             >
               {/* Personal Information */}
-              <div className="mb-10">
+              <div className="mb-5">
                 <div className="space-y-4">
                   <input
                     type="email"
@@ -143,6 +144,16 @@ const Login = () => {
                     disabled={isLoading}
                     className="w-full px-4 py-3 border-2 disabled:bg-gray-200 disabled:cursor-not-allowed border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
                   />
+                </div>
+
+                <div
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsForgetPasswordModalOpen(true);
+                  }}
+                  className="flex justify-end hover:cursor-pointer hover:text-orange-400"
+                >
+                  Forget Password?
                 </div>
               </div>
 
@@ -181,6 +192,8 @@ const Login = () => {
           </p>
         </div>
       </div>
+
+      {isForgetPasswordModalOpen && ForgetPasswordModal()}
     </>
   );
 };

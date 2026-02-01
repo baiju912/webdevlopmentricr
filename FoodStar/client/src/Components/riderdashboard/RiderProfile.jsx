@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../../context/AuthContext";
-import EditProfileModal from "./modals/EditProfileModal";
-import ResetPasswordModal from "./modals/ResetPasswordModal";
+import EditProfileModal from "../userDashboards/modals/EditProfileModal";
+import ResetPasswordModal from "../userDashboards/modals/ResetPasswordModal";
 import UserImage from "../../assets/userImage.jpg";
 import { FaCamera } from "react-icons/fa";
 import api from "../../config/Api";
 import toast from "react-hot-toast";
 
 
-const UserProfile = () => {
+const RiderProfile = () => {
   const { user, isLogin,setUser } = useAuth();
 
   const [isEditProfileModalOpen, setIsEditProfileModalOpen] = useState(false);
@@ -99,4 +99,4 @@ const UserProfile = () => {
   );
 };
 
-export default UserProfile;
+export default RiderProfile;
