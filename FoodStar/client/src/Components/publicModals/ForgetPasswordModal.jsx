@@ -24,10 +24,13 @@ const ForgetPasswordModal = ({ onClose }) => {
       let res;
       if (isOtpSent) {
         if (isOtpVerified) {
-          console.log("OTP already verify now update password");
+          res = await api.post("/auth/forgetPassword", formData);
+          toast.success(res.data.message);
           onClose();
         } else {
-          console.log("OTP already Send now Verify it");
+          res = await api.post("/auth/verifyOtp", formData);
+          toast.success(res.data.message);
+          setIsOtpSent(true);
           setIsOtpVerified(true);
         }
       } else {
