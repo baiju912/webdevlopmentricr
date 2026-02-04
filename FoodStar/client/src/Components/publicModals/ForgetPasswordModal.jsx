@@ -19,12 +19,19 @@ const ForgetPasswordModal = ({ onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
+    if (formData.newPassword !== formData.cfNewPassword) {
+      toast.error("New Password and Confirm Password Must be Same");
+      setLoading(false);
+      return;
+    }
+
     try {
       console.log(formData);
       let res;
       if (isOtpSent) {
         if (isOtpVerified) {
-          res = await api.post("/auth/forgetPassword", formData);
+          res = await api.post("/auth/forgetPasword", formData);
           toast.success(res.data.message);
           onClose();
         } else {
@@ -50,14 +57,13 @@ const ForgetPasswordModal = ({ onClose }) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-
   return (
     <>
       <div className="fixed inset-0 bg-black/50 flex justify-center items-center">
         <div className="bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-lg shadow-lg">
           <div className="flex justify-between px-6 py-4 border-b border-gray-300 items-center sticky top-0 bg-white">
             <h2 className="text-xl font-semibold text-gray-800">
-              Forget Password
+              Reset Password
             </h2>
             <button
               onClick={() => onClose()}

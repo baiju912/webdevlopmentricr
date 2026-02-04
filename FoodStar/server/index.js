@@ -10,6 +10,7 @@ import connectDB from "./src/config/db.js";
 import AuthRouter from "./src/routes/authRouter.js";
 import PublicRouter from "./src/routes/publicRouter.js";
 import UserRouter from "./src/routes/userRouter.js";
+import RestaurantRouter from "./src/routes/restaurantRouter.js";
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use(morgan("dev"));
 app.use("/auth", AuthRouter);
 app.use("/public",PublicRouter);
 app.use("/user", UserRouter);
+app.use("/restaurant", RestaurantRouter);
 
 app.get("/", (req, res) => {
   console.log("Server is Working");

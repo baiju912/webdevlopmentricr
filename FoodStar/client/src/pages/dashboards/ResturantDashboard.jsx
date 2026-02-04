@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import ResturantSideBar from "../../Components/resturantDashboard/ResturantSideBar";
-import { useAuth } from "../../context/AuthContext";
+import React, { useState, useEffect } from "react";
+import RestaurantSideBar from "../../Components/resturantDashboard/RestaurantSideBar.jsx"
+import RestaurantOverview from "../../Components/resturantDashboard/RestaurantOverview.jsx";
+import RestaurantProfile from "../../Components/resturantDashboard/RestaurantProfile.jsx";
+import RestaurantMenu from "../../Components/resturantDashboard/RestaurantMenu.jsx";
+import RestaurantOrders from "../../Components/resturantDashboard/RestaurantOrders.jsx";
+import RestaurantEarnings from "../../Components/resturantDashboard/RestaurantEarnings.jsx";
+import RestaurantHelpDesk from "../../Components/resturantDashboard/RestaurantHelpDesk.jsx";
+import { useAuth } from "../../context/AuthContext.jsx";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import ResturantOverview from "../../Components/resturantDashboard/ResturantOverview";
-import ResturantProfile from "../../Components/resturantDashboard/ResturantProfile";
-import ResturantOrder from "../../Components/resturantDashboard/ResturantOrder";
-import ResturantTransaction from "../../Components/resturantDashboard/ResturantTransaction";
-import ResturantMenuControl from "../../Components/resturantDashboard/ResturantMenuControl";
 
-const ResturantDashboard = () => {
+const RestaurantDashboard = () => {
   const { role, isLogin } = useAuth();
   const navigate = useNavigate();
   const [active, setActive] = useState("overview");
@@ -28,7 +28,7 @@ const ResturantDashboard = () => {
           <div className="border rounded shadow p-5 w-4xl mx-auto text-center bg-gray-100">
             <div className="text-5xl text-red-600">⊗</div>
             <div className="text-xl">
-              You are not login as Resturant Manager. Please Login again.
+              You are not logged in as Restaurant Manager. Please login again.
             </div>
           </div>
         </div>
@@ -38,27 +38,30 @@ const ResturantDashboard = () => {
 
   return (
     <>
-      <div className="flex w-full h-[88vh]">
+      <div className="w-full h-[90vh] flex">
         <div
-          className={`bg-(--color-background) duration-400  ${show ? "w-[23%]" : "w-[6%]"}`}
+          className={`bg-(--color-background) duration-300 ${
+            show ? "w-2/60" : "w-12/60"
+          }`}
         >
-          <ResturantSideBar
+          <RestaurantSideBar
             active={active}
             setActive={setActive}
             show={show}
             setShow={setShow}
           />
         </div>
-        <div className="border border-amber-700 duration-400 grow">
-          {active === "overview" && <ResturantOverview/>}
-          {active === "profile" && <ResturantProfile />}
-          {active === "order" && <ResturantOrder />}
-          {active === "transaction" && <ResturantTransaction />}
-          {active === "menu" && <ResturantMenuControl />}
+        <div className={`${show ? "w-58/60" : "w-48/60"} duration-300`}>
+          {active === "overview" && <RestaurantOverview />}
+          {active === "profile" && <RestaurantProfile />}
+          {active === "menu" && <RestaurantMenu />}
+          {active === "orders" && <RestaurantOrders />}
+          {active === "earnings" && <RestaurantEarnings />}
+          {active === "helpdesk" && <RestaurantHelpDesk />}
         </div>
       </div>
     </>
   );
 };
 
-export default ResturantDashboard;
+export default RestaurantDashboard;
