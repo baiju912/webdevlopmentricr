@@ -12,6 +12,13 @@ import RiderDashboard from "./pages/dashboards/RiderDashboard";
 import ResturantDashboard from "./pages/dashboards/ResturantDashboard";
 import AdminDashboard from "./pages/dashboards/AdminDashboard";
 import OrderNow from "./pages/OrderNow";
+import RestaurantDisplayMenu from "./pages/RestaurantDisplayMenu";
+import OrderNowCopy from "./pages/OrderNowcopy";
+import RestaurantDisplayMenuCopy from "./pages/RestaurantDisplayMenucopy";
+import NotFound from "./pages/NotFound";
+
+
+
 const App = () => {
   return (
     <>
